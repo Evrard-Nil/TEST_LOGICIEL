@@ -11,6 +11,7 @@ import org.netbeans.jemmy.JemmyProperties;
 import org.netbeans.jemmy.TimeoutExpiredException;
 import org.netbeans.jemmy.operators.JButtonOperator;
 import org.netbeans.jemmy.operators.JFrameOperator;
+import org.netbeans.jemmy.operators.JLabelOperator;
 import org.netbeans.jemmy.operators.JTextFieldOperator;
 import org.netbeans.jemmy.util.NameComponentChooser;
 
@@ -74,9 +75,7 @@ public class FelixTestConnexionImpossible {
 	 * Opérateur de JTextField utile pour les tests
 	 * (pour la manipulation du label "Informations" de l'instance de Felix).
 	 */
-	private static JTextFieldOperator labelInfos;
-	// TODO A changer en label
-	
+	private static JLabelOperator labelInfos;
 	
 	/**
 	 * Configure Jemmy pour les tests et lancements de l'application à tester.
@@ -143,6 +142,7 @@ public class FelixTestConnexionImpossible {
 			FelixTestConnexionImpossible.application.startApplication(FelixTestConnexionImpossible.parametres);
 		}
 		catch (InvocationTargetException e) {
+			
 			Assert.fail("Problème d'invocation de l'application : " + e.getMessage());
 			throw e;
 		} 
@@ -195,8 +195,7 @@ public class FelixTestConnexionImpossible {
 		Assert.assertNotNull("Le champ de saisie du port n'est pas accessible.", textePort);
 		
 		// Récupération du champ de prix total de la vente (par son nom).
-		// TODO A changer en label
-		labelInfos = new JTextFieldOperator(fenetreConnexion,   
+		labelInfos = new JLabelOperator(fenetreConnexion,   
 				new NameComponentChooser(Felix.CONFIGURATION.getString("CHAMP_INFOS_NAME")));
 		Assert.assertNotNull("Le label d'information n'est pas accessible.", labelInfos);
 		
@@ -226,6 +225,9 @@ public class FelixTestConnexionImpossible {
 		final String ipAttendu = "127.0.0.1";
 		final String portAttendu = "12345";
 		final String infoDefautAttendu = "Saisir l'adresse et le port du serveur chat.";
+		
+		texteIP.setText(ipAttendu);
+		labelInfos.setText(infoDefautAttendu);
 		
 		try {
 			// Attente du message de l'IP.
@@ -298,6 +300,7 @@ public class FelixTestConnexionImpossible {
 		
 		textePort.setText(portAttendu);
 		texteIP.setText("0");
+		labelInfos.setText(infoDefautAttendu);
 		
 		try {
 			// Attente du message de l'IP.
@@ -370,6 +373,7 @@ public class FelixTestConnexionImpossible {
 		
 		textePort.setText(portAttendu);
 		texteIP.setText(ipAttendu);
+		labelInfos.setText(infoDefautAttendu);
 		
 		try {
 			// Attente du message de l'IP.
