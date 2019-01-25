@@ -54,6 +54,12 @@ public class FelixTestConnexionPossible {
 	private static JFrameOperator fenetreConnexion;
 	
 	/**
+	 * Opérateur de JFrame utile pour les tests 
+	 * (pour la manipulation de la fenêtre Chat de Felix).
+	 */
+	private static JFrameOperator fenetreChat;
+	
+	/**
 	 * Opérateur de JButton utile pour les tests
 	 * (pour la manipulation du bouton "connexion" de la vue de Connexion de Felix).
 	 */
@@ -96,9 +102,9 @@ public class FelixTestConnexionPossible {
 		
 		// Démarrage de l'instance de Felix nécessaire aux tests.
 		try {
-			FelixTestConnexionImpossible.application = new ClassReference("felix.Felix");
-			FelixTestConnexionImpossible.parametres = new String[1];
-			FelixTestConnexionImpossible.parametres[0] = ""; //"-b" en mode bouchonné, "" en mode collaboration avec Camix;
+			FelixTestConnexionPossible.application = new ClassReference("felix.Felix");
+			FelixTestConnexionPossible.parametres = new String[1];
+			FelixTestConnexionPossible.parametres[0] = ""; //"-b" en mode bouchonné, "" en mode collaboration avec Camix;
 			
 			lanceInstance();
 			
@@ -139,7 +145,7 @@ public class FelixTestConnexionPossible {
 	{
 		try {
 			// Lancement d'une application.
-			FelixTestConnexionImpossible.application.startApplication(FelixTestConnexionImpossible.parametres);
+			FelixTestConnexionPossible.application.startApplication(FelixTestConnexionPossible.parametres);
 		}
 		catch (InvocationTargetException e) {
 			
@@ -211,7 +217,7 @@ public class FelixTestConnexionPossible {
 	 * @throws InterruptedException  pour la temporisation par suspension du thread.
 	 */
 	@Test
-	public void testConnexionSansCamix_adresseEtPortValides() throws InterruptedException
+	public void testConnexionAvecCamix_adresseEtPortValides() throws InterruptedException
 	{
 		// 1,5 seconde d'observation par suspension du thread 
 		// entre chaque action (objectif pédagogique).
@@ -248,13 +254,9 @@ public class FelixTestConnexionPossible {
 		// Validation des valeurs des champs libellé prix du produit ainsi que du ticket.
 		final String infoAttendu = "Connexion au chat @"+ipAttendu+":"+portAttendu+" impossible";
 		
-		try {
-			// Attente du message d'information de l'achat.
-			labelInfos.waitText(infoAttendu);
-		} 
-		catch (TimeoutExpiredException e) {
-			Assert.fail("Information d'échec de connexion invalide.");
-		}		
+		// Récupération du bouton d'ajout d'un produit à la vente (par son nom).
+		fenetreChat = new JFrameOperator(new NameComponentChooser(Felix.CONFIGURATION.getString("FENETRE_CHAT_TITRE")));
+		Assert.assertNotNull("La fenêtre de la vue chat n'est pas accessible.", fenetreConnexion);
 		
 		// Observation par suspension du thread (objectif pédagogique).
 		Thread.sleep(timeout);

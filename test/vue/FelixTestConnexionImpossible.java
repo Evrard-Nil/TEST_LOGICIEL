@@ -40,7 +40,7 @@ public class FelixTestConnexionImpossible {
 	 * pour cette classe de test quelque soit le nombre de tests effectués.
 	 * </p>
 	 */
-	private static ClassReference application;
+	private static ClassReference felixApp;
 	
 	/**
 	 * Les paramètres de lancement de l'application.
@@ -96,7 +96,7 @@ public class FelixTestConnexionImpossible {
 		
 		// Démarrage de l'instance de Felix nécessaire aux tests.
 		try {
-			FelixTestConnexionImpossible.application = new ClassReference("felix.Felix");
+			FelixTestConnexionImpossible.felixApp = new ClassReference("felix.Felix");
 			FelixTestConnexionImpossible.parametres = new String[1];
 			FelixTestConnexionImpossible.parametres[0] = ""; //"-b" en mode bouchonné, "" en mode collaboration avec Camix;
 			
@@ -139,7 +139,7 @@ public class FelixTestConnexionImpossible {
 	{
 		try {
 			// Lancement d'une application.
-			FelixTestConnexionImpossible.application.startApplication(FelixTestConnexionImpossible.parametres);
+			FelixTestConnexionImpossible.felixApp.startApplication(FelixTestConnexionImpossible.parametres);
 		}
 		catch (InvocationTargetException e) {
 			

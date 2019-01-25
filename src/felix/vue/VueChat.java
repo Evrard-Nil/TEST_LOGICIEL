@@ -98,6 +98,7 @@ public class VueChat extends VueFelix implements ActionListener, Runnable
 		final Integer hauteur = Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CHAT_HAUTEUR"));
 		
 		this.fenetre = new Fenetre(largeur, hauteur, Felix.CONFIGURATION.getString("FENETRE_CHAT_TITRE"));
+		this.fenetre.setName(Felix.CONFIGURATION.getString("FENETRE_CHAT_TITRE"));
 		
 		this.construireFenetre(largeur, hauteur);	
 	}
