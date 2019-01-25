@@ -1,16 +1,23 @@
 package felix.vue;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.NumberFormat;
 
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
 import felix.Felix;
@@ -42,24 +49,34 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 	private Container contenu;
 	
 	/**
-	 * Les panneaux de la vue.
+	 * Panneaux de la vue:
+	 * - Panneau saisie d'IP
+	 * - Panneau saisie de PORT
+	 * - Panneau border
+	 * - panneau bouton de connexion
 	 */
-	private JPanel panIPPort, panMessages, panConnecter;
-
-	/**
-	 * Les champs texte pour l'adresse IP et les messages.
-	 */
-	private JTextField texteIP, texteMessages;
+	private JPanel ipPanel, portPanel, borderPane, connectPane;
 	
 	/**
-	 * Le champs texte formaté du port de la vue.
+	 * Labels de la vu:
+	 * - Label ip
+	 * - Label port
+	 * - Label d'infos
 	 */
-	private JFormattedTextField textePort;
+	private JLabel ipLabel, portLabel, infosLabel;
 	
 	/**
-	 * Le bouton connecter de la vue.
+	 * Champs de saisie de la vue
+	 * - IP
+	 * - Port
 	 */
-	private JButton boutonConnecter;
+	private JTextField ipTextField, portTextfield;
+	
+	/**
+	 * Bouton de connexion
+	 * 
+	 */
+	private JButton connectionButton;
 	
 	/**
 	 * Constructeur de la vue chat.
@@ -97,16 +114,27 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 	private void construirePanneaux()
 	{
 		this.contenu = this.fenetre.getContentPane();
-		this.contenu.setLayout(new FlowLayout());
-
-		this.panIPPort = new JPanel();
-		this.contenu.add(this.panIPPort);
+		this.contenu.setLayout(new BorderLayout());
 		
-		this.panMessages = new JPanel();
-		this.contenu.add(this.panMessages);
+		this.borderPane = new JPanel(new FlowLayout());
+		Integer borderLenght = Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MARGE"));
+		this.borderPane.setBorder(BorderFactory.createEmptyBorder(borderLenght,borderLenght, borderLenght, borderLenght));
+		
+		this.ipPanel = new JPanel();
+		this.ipLabel = new JLabel("IP: ");
+		this.ipPanel.add(ipLabel);
+		this.borderPane.add(this.ipPanel);
+		
+		this.portPanel = new JPanel();
+		this.portLabel=new JLabel("PORT: ");
+		this.portPanel.add(portLabel);
+		this.borderPane.add(this.portPanel);
 
-		this.panConnecter = new JPanel();
-		this.contenu.add(this.panConnecter);
+		this.borderPane.add(new JSeparator());
+		this.connectPane=new JPanel();
+		this.contenu.add(this.borderPane);
+		
+		this.fenetre.setResizable(false);
 	}
 
 	/**
@@ -121,33 +149,28 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 		final Integer mLargeur = Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MARGE_LARGEUR"));
 		final Integer hMessage = Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_HAUTEUR_MESSAGE"));
 
-		/* Saisie de l'IP. */	
-		this.texteIP = new JTextField(Felix.CONFIGURATION.getString("ADRESSE_CHAT"), 
+		this.ipTextField = new JTextField(Felix.CONFIGURATION.getString("ADRESSE_CHAT"), 
 				Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_TAILLE_SAISIE_IP")));
-		this.texteIP.setEditable(true);
-		this.texteIP.requestFocus();
-		this.panIPPort.add(this.texteIP);
+		this.ipTextField.setEditable(true);
+		this.ipTextField.requestFocus();
+		this.ipPanel.add(this.ipTextField);
 		
-		/* Saisie du port. */
-		this.textePort = new JFormattedTextField(NumberFormat.getIntegerInstance());
-		this.textePort.setValue(Integer.parseInt(Felix.CONFIGURATION.getString("PORT_CHAT")));
-		this.textePort.setColumns(
-				Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_TAILLE_SAISIE_PORT")));
-		this.textePort.setEditable(true);
-		this.panIPPort.add(this.textePort);
 
-		/* Messages de connexion. */
-		this.texteMessages = new JTextField(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MESSAGE_DEFAUT"));
-		this.texteMessages.setPreferredSize(new Dimension(largeur - mLargeur, hMessage));
-		this.texteMessages.setHorizontalAlignment(JTextField.LEFT);
-		this.texteMessages.setEditable(false);
-		this.texteMessages.setFocusable(false);
-		this.panMessages.add(this.texteMessages);
+		this.portTextfield = new JFormattedTextField(Integer.parseInt(Felix.CONFIGURATION.getString("PORT_CHAT")));
+		this.portTextfield.setColumns(
+				Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_TAILLE_SAISIE_PORT")));
+		this.portTextfield.setEditable(true);
+		this.portPanel.add(this.portTextfield);
+
+		this.infosLabel = new JLabel(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MESSAGE_DEFAUT"));
+		this.infosLabel.setPreferredSize(new Dimension(largeur - mLargeur, hMessage));
+		this.borderPane.add(this.infosLabel);
+		this.borderPane.add(new JSeparator());
 	
-		/* Bouton de connexion */
-		this.boutonConnecter = new JButton(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_BOUTON_CONNECTER"));
-		this.boutonConnecter.addActionListener(this);
-		this.panConnecter.add(this.boutonConnecter);
+		this.connectionButton = new JButton(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_BOUTON_CONNECTER"));
+		this.connectionButton.addActionListener(this);
+		this.connectPane.add(this.connectionButton);
+		this.borderPane.add(this.connectPane);
 	}
 
 	/**
@@ -160,14 +183,14 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 	public void actionPerformed(ActionEvent ev)
 	{
 		try {
-			if (ev.getSource() == this.boutonConnecter) {
+			if (ev.getSource() == this.connectionButton) {
 				
-				this.texteMessages.setText(String.format(
+				this.infosLabel.setText(String.format(
 					Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MESSAGE_CONNEXION"), 
-					this.texteIP.getText().trim(), 
-					((Number) this.textePort.getValue()).toString()));
+					this.ipTextField.getText().trim(), 
+					((Number) (((JFormattedTextField) this.portTextfield).getValue())).toString()));
 							
-				this.boutonConnecter.setEnabled(false);
+				this.connectionButton.setEnabled(false);
 				
 				/* Initiation de la connexion. */
 				new Thread(this).start();
@@ -192,12 +215,11 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 		try {
 			Thread.sleep(500);
 			this.donneControleur().connecteCamix(
-					this.texteIP.getText().trim(), ((Number) this.textePort.getValue()).intValue());
-			
+					this.ipTextField.getText().trim(), ((Number) ((JFormattedTextField) this.portTextfield).getValue()).intValue());
 		} catch (IOException | InterruptedException e) {
 			afficheConnexionImpossible();
 		} finally {
-			this.boutonConnecter.setEnabled(true);
+			this.connectionButton.setEnabled(true);
 		}
 	}
 	
@@ -207,10 +229,10 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 	 */
 	private void afficheConnexionImpossible()
 	{
-		this.texteMessages.setText(String.format(
+		this.infosLabel.setText(String.format(
 				Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MESSAGE_CONNEXION_IMPOSSIBLE"), 
-					this.texteIP.getText().trim(), 
-					((Number) this.textePort.getValue()).toString()));
+					this.ipTextField.getText().trim(), 
+					((Number) ((JFormattedTextField) this.portTextfield).getValue()).toString()));
 	}
 	
 	/**
