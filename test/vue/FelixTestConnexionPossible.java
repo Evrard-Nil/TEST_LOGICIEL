@@ -18,7 +18,7 @@ import org.netbeans.jemmy.util.NameComponentChooser;
 import felix.Felix;
 
 /**
- * Classe de tests de l'application Felix sans Camix de lancé.
+ * Classe de tests de l'application Felix avec un Camix lancé
  * 
  * <p>
  * Ces tests s'appuient sur Jemmy 2 pour automatiser la manipulation de l'IHM.</p>
@@ -30,7 +30,7 @@ import felix.Felix;
  * @author Barthélémy Tek
  *
  */
-public class FelixTestConnexionImpossible {
+public class FelixTestConnexionPossible {
 
 	/**
 	 * L'application à tester.
