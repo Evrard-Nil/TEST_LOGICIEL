@@ -74,6 +74,7 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 		final Integer hauteur = Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_HAUTEUR"));
 		
 		this.fenetre = new Fenetre(largeur, hauteur, Felix.CONFIGURATION.getString("FENETRE_CONNEXION_TITRE"));
+		this.fenetre.setName(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_NAME"));
 		
 		this.construireFenetre(largeur, hauteur);	
 	}
@@ -124,6 +125,7 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 		/* Saisie de l'IP. */	
 		this.texteIP = new JTextField(Felix.CONFIGURATION.getString("ADRESSE_CHAT"), 
 				Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_TAILLE_SAISIE_IP")));
+		this.texteIP.setName(Felix.CONFIGURATION.getString("CHAMP_IP_NAME"));
 		this.texteIP.setEditable(true);
 		this.texteIP.requestFocus();
 		this.panIPPort.add(this.texteIP);
@@ -131,6 +133,7 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 		/* Saisie du port. */
 		this.textePort = new JFormattedTextField(NumberFormat.getIntegerInstance());
 		this.textePort.setValue(Integer.parseInt(Felix.CONFIGURATION.getString("PORT_CHAT")));
+		this.textePort.setName(Felix.CONFIGURATION.getString("CHAMP_PORT_NAME"));
 		this.textePort.setColumns(
 				Integer.parseInt(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_TAILLE_SAISIE_PORT")));
 		this.textePort.setEditable(true);
@@ -138,6 +141,7 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 
 		/* Messages de connexion. */
 		this.texteMessages = new JTextField(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MESSAGE_DEFAUT"));
+		this.texteMessages.setName(Felix.CONFIGURATION.getString("CHAMP_INFOS_NAME"));
 		this.texteMessages.setPreferredSize(new Dimension(largeur - mLargeur, hMessage));
 		this.texteMessages.setHorizontalAlignment(JTextField.LEFT);
 		this.texteMessages.setEditable(false);
@@ -146,6 +150,7 @@ public class VueConnexion extends VueFelix implements ActionListener, Runnable
 	
 		/* Bouton de connexion */
 		this.boutonConnecter = new JButton(Felix.CONFIGURATION.getString("FENETRE_CONNEXION_BOUTON_CONNECTER"));
+		this.boutonConnecter.setName(Felix.CONFIGURATION.getString("BOUTON_CONNEXION_NAME"));
 		this.boutonConnecter.addActionListener(this);
 		this.panConnecter.add(this.boutonConnecter);
 	}
