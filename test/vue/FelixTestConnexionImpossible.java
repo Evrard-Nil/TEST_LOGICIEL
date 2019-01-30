@@ -280,13 +280,15 @@ public class FelixTestConnexionImpossible {
 		Thread.sleep(timeout);		
 		
 		// Validation des valeurs des champs libellé prix du produit.
-		final String ipAttendu = "127.0.0.1";
-		final String portAttendu = "51074";
+		final String ipAttendu = "8.8.8.8";
+		final String portAttendu = "80";
 		final String infoDefautAttendu = "Saisir l'adresse et le port du serveur chat.";
 		
 		textePort.setText(portAttendu);
 		texteIP.setText(ipAttendu);
 		labelInfos.setText(infoDefautAttendu);
+		
+		textePort.clickMouse();
 		
 		try {
 			// Attente du message d'information.
