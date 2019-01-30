@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Plan de test - mono unit" enabled="true">
+      <stringProp name="TestPlan.comments">Plan de test avec un seul groupe d&apos;unités, DT basées sur variables et/ou CSV</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ConfigTestElement guiclass="TCPConfigGui" testclass="ConfigTestElement" testname="Paramètres TCP par défaut : ex. connexion Morix" enabled="true">
+        <stringProp name="TCPSampler.server">127.0.0.1</stringProp>
+        <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+        <stringProp name="TCPSampler.port">13579</stringProp>
+        <boolProp name="TCPSampler.nodelay">false</boolProp>
+        <stringProp name="TCPSampler.timeout">500</stringProp>
+        <stringProp name="TCPSampler.request"></stringProp>
+        <stringProp name="TestPlan.comments">Connexion au serveur Morix.</stringProp>
+        <stringProp name="TCPSampler.classname">morix.TCPClientMorixImpl</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables pré-définies : ex. protocole" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="DONNE_PRODUITS" elementType="Argument">
+            <stringProp name="Argument.name">DONNE_PRODUITS</stringProp>
+            <stringProp name="Argument.value">/P</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">commande client -&gt; serveur (monix -&gt; morix)</stringProp>
+          </elementProp>
+          <elementProp name="INSCRIPTION_CLIENT" elementType="Argument">
+            <stringProp name="Argument.name">INSCRIPTION_CLIENT</stringProp>
+            <stringProp name="Argument.value">/I</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">commande client -&gt; serveur (monix -&gt; morix)</stringProp>
+          </elementProp>
+          <elementProp name="CHANGE_QUANTITE_PRODUIT" elementType="Argument">
+            <stringProp name="Argument.name">CHANGE_QUANTITE_PRODUIT</stringProp>
+            <stringProp name="Argument.value">/c</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">commande client -&gt; serveur (monix -&gt; morix)</stringProp>
+          </elementProp>
+          <elementProp name="MODIFIE_QUANTITE_PRODUIT" elementType="Argument">
+            <stringProp name="Argument.name">MODIFIE_QUANTITE_PRODUIT</stringProp>
+            <stringProp name="Argument.value">/q</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">commande serveur -&gt; client (morix -&gt; monix)</stringProp>
+          </elementProp>
+          <elementProp name="SEPARATEUR_CHAMPS_PRODUIT" elementType="Argument">
+            <stringProp name="Argument.name">SEPARATEUR_CHAMPS_PRODUIT</stringProp>
+            <stringProp name="Argument.value">:::</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">utilisé dans les commandes</stringProp>
+          </elementProp>
+          <elementProp name="SEPARATEUR_PRODUITS" elementType="Argument">
+            <stringProp name="Argument.name">SEPARATEUR_PRODUITS</stringProp>
+            <stringProp name="Argument.value">///</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">utilisé dans les commandes</stringProp>
+          </elementProp>
+          <elementProp name="MESSAGE_INSCRIPTION" elementType="Argument">
+            <stringProp name="Argument.name">MESSAGE_INSCRIPTION</stringProp>
+            <stringProp name="Argument.value">Inscription OK</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">message serveur -&gt; client</stringProp>
+          </elementProp>
+          <elementProp name="MESSAGE_ERREUR" elementType="Argument">
+            <stringProp name="Argument.name">MESSAGE_ERREUR</stringProp>
+            <stringProp name="Argument.value">Erreur Morix : </stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">message serveur -&gt; client</stringProp>
+          </elementProp>
+        </collectionProp>
+        <stringProp name="TestPlan.comments">Variables du protocole de communication avec le serveur Morix.</stringProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Groupe d&apos;unités" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Contrôleur Boucle" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Contrôleur Module" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="1951989153">Plan de test - mono unité</stringProp>
+            <stringProp name="-1611361052">Fragment d&apos;éléments : ex. DT avec variables et CSV</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Fragment d&apos;éléments : ex. DT avec variables" enabled="false">
+        <stringProp name="TestPlan.comments">Unités de test du serveur Morix - utilisation de variables pré-définies pour les DT</stringProp>
+      </TestFragmentController>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables pré-définies : données de test" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="ID_PRODUIT" elementType="Argument">
+              <stringProp name="Argument.name">ID_PRODUIT</stringProp>
+              <stringProp name="Argument.value">11A</stringProp>
+              <stringProp name="Argument.desc">identifiant du produit utilisé pour les tests</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_DECREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_DECREMENT</stringProp>
+              <stringProp name="Argument.value">-1</stringProp>
+              <stringProp name="Argument.desc">quantité de produit à enlever du stock</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_ATTENDUE_DECREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_ATTENDUE_DECREMENT</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.desc">quantité de produit attendue dans le stock après test décrément</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_INCREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_INCREMENT</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.desc">quantité de produit à ajouter au stock</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_ATTENDUE_INCREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_ATTENDUE_INCREMENT</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.desc">quantité de produit attendue dans le stock après test incrément</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ID_PRODUIT_INEXISTANT" elementType="Argument">
+              <stringProp name="Argument.name">ID_PRODUIT_INEXISTANT</stringProp>
+              <stringProp name="Argument.value">INEXISTANTID</stringProp>
+              <stringProp name="Argument.desc">identifiant d&apos;un produit non présent dans le stock utilisé pour les tests</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Compteur de temps fixe" enabled="true">
+          <stringProp name="ConstantTimer.delay">500</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Inscription client" enabled="true">
+          <stringProp name="TestPlan.comments">Inscription d&apos;un client au canal de diffusion des informations de Morix.</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${INSCRIPTION_CLIENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="78399604">${MESSAGE_INSCRIPTION}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Décrémente quantité" enabled="true">
+          <stringProp name="TestPlan.comments">Test de décrément d&apos;une quantité du produit (cf. variables prédéfinies)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_DECREMENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-989869055">${MODIFIE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_ATTENDUE_DECREMENT}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Incrémente quantité" enabled="true">
+          <stringProp name="TestPlan.comments">Test d&apos;incrément d&apos;une quantité du produit (cf. variables prédéfinies)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_INCREMENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1059657563">${MODIFIE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_ATTENDUE_INCREMENT}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Décrémente quantité - produit inexistant" enabled="true">
+          <stringProp name="TestPlan.comments">Test de décrément d&apos;une quantité d&apos;un produit non présent dans le stock (cf. variables prédéfinies)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${ID_PRODUIT_INEXISTANT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_DECREMENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1474541521">${MESSAGE_ERREUR}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Fragment d&apos;éléments : ex. DT avec CSV" enabled="false">
+        <stringProp name="TestPlan.comments">Unités de test du serveur Morix - utilisation d&apos;un fichier CSV pour les DT</stringProp>
+      </TestFragmentController>
+      <hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Compteur de temps fixe" enabled="true">
+          <stringProp name="ConstantTimer.delay">500</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Inscription client" enabled="true">
+          <stringProp name="TestPlan.comments">Inscription d&apos;un client au canal de diffusion des informations de Morix.</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${INSCRIPTION_CLIENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="78399604">${MESSAGE_INSCRIPTION}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Décrémente quantité" enabled="true">
+          <stringProp name="TestPlan.comments">Test de décrément d&apos;une quantité du produit (cf. jmeter/jt/dt_csv.txt)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${__CSVRead(jmeter/jt/dt_csv.txt,0)}${SEPARATEUR_CHAMPS_PRODUIT}${__CSVRead(jmeter/jt/dt_csv.txt,1)}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-403656139">${MODIFIE_QUANTITE_PRODUIT} ${__CSVRead(jmeter/jt/dt_csv.txt,2)}${SEPARATEUR_CHAMPS_PRODUIT}${__CSVRead(jmeter/jt/dt_csv.txt,3)}${__CSVRead(jmeter/jt/dt_csv.txt,next)}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="TestPlan.comments">cf jmeter/jt/dt_csv.txt</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Incrémente quantité" enabled="true">
+          <stringProp name="TestPlan.comments">Test de l&apos;crément d&apos;une quantité du produit (cf. jmeter/jt/dt_csv.txt)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${__CSVRead(jmeter/jt/dt_csv.txt,0)}${SEPARATEUR_CHAMPS_PRODUIT}${__CSVRead(jmeter/jt/dt_csv.txt,1)}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-403656139">${MODIFIE_QUANTITE_PRODUIT} ${__CSVRead(jmeter/jt/dt_csv.txt,2)}${SEPARATEUR_CHAMPS_PRODUIT}${__CSVRead(jmeter/jt/dt_csv.txt,3)}${__CSVRead(jmeter/jt/dt_csv.txt,next)}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="TestPlan.comments">cf. jmeter/jt/dt_csv.txt</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Décrémente quantité - produit inexistant" enabled="true">
+          <stringProp name="TestPlan.comments">Test de décrément d&apos;une quantité d&apos;un produit non présent dans le stock (cf. jmeter/jt/dt_csv.txt)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${__CSVRead(jmeter/jt/dt_csv.txt,0)}${SEPARATEUR_CHAMPS_PRODUIT}${__CSVRead(jmeter/jt/dt_csv.txt,1)}${__CSVRead(jmeter/jt/dt_csv.txt,next)}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1474541521">${MESSAGE_ERREUR}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Fragment d&apos;éléments : ex. DT avec variables et CSV" enabled="false">
+        <stringProp name="TestPlan.comments">Unités de test du serveur Morix - utilisation de variables pré-définies et d&apos;un fichier CSV pour les DT</stringProp>
+      </TestFragmentController>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables pré-définies : données de test" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="ID_PRODUIT" elementType="Argument">
+              <stringProp name="Argument.name">ID_PRODUIT</stringProp>
+              <stringProp name="Argument.value">${__CSVRead(jmeter/jt/dt_var_csv.txt,0)}${__CSVRead(jmeter/jt/dt_var_csv.txt,next)}</stringProp>
+              <stringProp name="Argument.desc">identifiant du produit utilisé pour les tests</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_DECREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_DECREMENT</stringProp>
+              <stringProp name="Argument.value">${__CSVRead(jmeter/jt/dt_var_csv.txt,0)}</stringProp>
+              <stringProp name="Argument.desc">quantité de produit à enlever du stock</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_ATTENDUE_DECREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_ATTENDUE_DECREMENT</stringProp>
+              <stringProp name="Argument.value">${__CSVRead(jmeter/jt/dt_var_csv.txt,1)}${__CSVRead(jmeter/jt/dt_var_csv.txt,next)}</stringProp>
+              <stringProp name="Argument.desc">quantité de produit attendue dans le stock après test décrément</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_INCREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_INCREMENT</stringProp>
+              <stringProp name="Argument.value">${__CSVRead(jmeter/jt/dt_var_csv.txt,0)}</stringProp>
+              <stringProp name="Argument.desc">quantité de produit à ajouter au stock</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="QTT_ATTENDUE_INCREMENT" elementType="Argument">
+              <stringProp name="Argument.name">QTT_ATTENDUE_INCREMENT</stringProp>
+              <stringProp name="Argument.value">${__CSVRead(jmeter/jt/dt_var_csv.txt,1)}${__CSVRead(jmeter/jt/dt_var_csv.txt,next)}</stringProp>
+              <stringProp name="Argument.desc">quantité de produit attendue dans le stock après test incrément</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ID_PRODUIT_INEXISTANT" elementType="Argument">
+              <stringProp name="Argument.name">ID_PRODUIT_INEXISTANT</stringProp>
+              <stringProp name="Argument.value">${__CSVRead(jmeter/jt/dt_var_csv.txt,0)}${__CSVRead(jmeter/jt/dt_var_csv.txt,next)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">identifiant d&apos;un produit non présent dans le stock utilisé pour les tests</stringProp>
+            </elementProp>
+          </collectionProp>
+          <stringProp name="TestPlan.comments">cf. jmeter/jt/dt_var_csv.txt</stringProp>
+        </Arguments>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Compteur de temps fixe" enabled="true">
+          <stringProp name="ConstantTimer.delay">500</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Inscription client" enabled="true">
+          <stringProp name="TestPlan.comments">Inscription d&apos;un client au canal de diffusion des informations de Morix.</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${INSCRIPTION_CLIENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="78399604">${MESSAGE_INSCRIPTION}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Décrémente quantité" enabled="true">
+          <stringProp name="TestPlan.comments">Test de décrément d&apos;une quantité du produit (cf. variables prédéfinies)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_DECREMENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-989869055">${MODIFIE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_ATTENDUE_DECREMENT}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Incrémente quantité" enabled="true">
+          <stringProp name="TestPlan.comments">Test d&apos;incrément d&apos;une quantité du produit (cf. variables prédéfinies)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_INCREMENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1059657563">${MODIFIE_QUANTITE_PRODUIT} ${ID_PRODUIT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_ATTENDUE_INCREMENT}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="Requête TCP - Décrémente quantité - produit inexistant" enabled="true">
+          <stringProp name="TestPlan.comments">Test de décrément d&apos;une quantité d&apos;un produit non présent dans le stock (cf. variables prédéfinies)</stringProp>
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">${CHANGE_QUANTITE_PRODUIT} ${ID_PRODUIT_INEXISTANT}${SEPARATEUR_CHAMPS_PRODUIT}${QTT_DECREMENT}</stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Réponse" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1474541521">${MESSAGE_ERREUR}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Arbre de résultats" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

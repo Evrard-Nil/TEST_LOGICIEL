@@ -1,0 +1,138 @@
+Morix Java v5.1
+
+-----------
+Description
+-----------
+
+Morix : Logiciel serveur de gestion d'un stock de produits enregistrés dans une base de données (MySQL).
+Utilisation prévue avec un client Monix.
+Programme à usage pédagogique.
+
+v5.1 : 
+- configuration dans le répertoire config ;
+- communication avec le composant Monix (BufferedReader et BufferedWriter) ;
+- communication avec une base de donnée MySQL ;
+- configuration JMeter avec exemple de plans de test (répertoire jmeter) ;
+- classe TCPClient pour JMeter (avec gestion des retours à la ligne) ;
+- aucun test unitaire.
+
+-----------
+Dépendances
+-----------
+
+Nécessaires pour la base de données :
+-------------------------------------
+
+Base de données MySQL (linux : paquet "mysql-server").
+
+Connecteur jdbc MySQL (linux : paquet "libmysql-java").
+
+Configuration de la base de donnée pour Morix (création et remplissage de la base de donnée) : 
+voir le répertoire tools/mysql/. Des scripts SQL et un Makefile sont fournis.
+
+Remarque : le mot de passe administrateur mysql (root pour mysql !) est demandé par chaque script.
+
+Voir le fichier tools/mysql/Makefile pour plus d'informations (nettoyage, ré-initialisation de la base).
+
+Nécessaires pour les tests avec JMeter :
+----------------------------------------
+
+apache-jmeter (prendre dernière version disponible sur internet)
+
+Recommandée pour l'usage :
+--------------------------
+
+Monix v5.1
+
+
+-------------------
+Import dans Eclipse
+-------------------
+
+Créer un nouveau projet java :
+------------------------------
+
+File -> New -> Java Project
+Project Name : Morix_Java
+Next >
+
+(onglet Source) 
+Create new source folder
+Folder name : test
+Finish
+
+(onglet Source) 
+Create new source folder
+Folder name : config
+Finish
+
+(onglet Source) 
+Create new source folder
+Folder name : jmeter/src
+Finish
+
+(onglet Libraries) 
+Add Librairy... -> JUnit
+Next >
+Sélectionner JUnit 4
+Finish
+
+(onglet Libraries) 
+Add External JARs... -> 
+<path>/<to>/<mysql jdbc driver>.jar (Drivers JDBC pour MySQL, e.g.: /usr/share/java/mysql.jar)
+Valider
+
+(onglet Libraries) 
+Add External JARs... -> 
+<path>/<to>/apache-jmeter/lib/ext/ApacheJMeter_tcp.jar (e.g.: /usr/share/jmeter/lib/ext/ApacheJMeter_tcp.jar)
+Valider
+Add External JARs... -> 
+<path>/<to>/apache-jmeter/lib/ext/ApacheJMeter_core.jar (e.g.: /usr/share/jmeter/lib/ext/ApacheJMeter_core.jar)
+Valider
+
+Finish
+
+
+Remarque : il peut être nécessaire de préciser que les sources du projet sont en UTF-8 (clic droit sur le projet -> Properties -> Resource -> Text file encoding : Other |UTF-8|.
+
+
+Importer les sources :
+----------------------
+
+(dans la vue Package Explorer)
+clique droit sur le projet
+Import...
+General > File System
+From directory : (Browse...) /<path>/<to>/<morix>/
+Valider
+(cliquer sur la flèche (ou le +) devant le répertoire du projet)
+sélectionner les répertoires "config", "jmeter", "src", "test" et "tools"
+Finish
+
+
+Configuration de l'exécution du logiciel :
+------------------------------------------
+
+Run -> Run Configurations...
+Java Application -> clique droit -> New
+Name : Morix Java
+Main class : (Search...) Morix - morix
+Apply
+Close
+
+
+Configuration de l'exécution des tests avec JMeter :
+----------------------------------------------------
+
+Run -> External Tools -> External Tools Configurations...
+Program -> clique droit -> New
+Name : Morix Java Test JMeter
+Location : <path>/<to>/bin/jmeter (e.g.: /usr/bin/jmeter)
+Working directory : ${workspace_loc:/Morix_Java}
+Arguments : -q "${workspace_loc:/Morix_Java}/jmeter/properties/user.properties" -j "${workspace_loc:/Morix_Java}/jmeter/log/jmeter.log" -t "${workspace_loc:/Morix_Java}/jmeter/plan_test-ex0-hello.jmx"
+
+Remarque : l'utilisation de guillemets pour encadrer les valeurs des options permet de se prémunir d'erreurs dûes à des espaces dans les noms de certains chemins.
+
+Remarque : l'ajout de l'argument -Dsun.java2d.xrender=false peut être nécessaire si des changements de résolutions peuvent survenir lors de l'utilisation de jmeter (par exemple si un vidéo-projecteur est impliqué !).
+
+

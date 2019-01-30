@@ -1,0 +1,157 @@
+Monix Java v5.1
+
+-----------
+Description
+-----------
+
+Monix : Logiciel de caisse enregistreuse de vente de produit. 
+Programme à usage pédagogique.
+
+v5.1 : 
+- configuration dans le répertoire config ;
+- communication avec le composant Morix (BufferedReader et BufferedWriter) ;
+- mise à disposition d'une classe de bouchon de stock (dans le répertoire fake/monix/modele/stock) ;
+- lancement possible du programme sur le bouchon de stock avec l'option -b ;
+- implantation de tests unitaires avec JUnit4, EasyMock, Mockito et Jemmy2.
+
+
+-----------
+Dépendances
+-----------
+
+Nécessaires pour les tests :
+----------------------------
+
+JUnit, EasyMock, Mockito, Jemmy2.
+
+Recommandée à l'usage :
+-----------------------
+
+Morix Java v5.1
+
+
+-------------------
+Import dans Eclipse
+-------------------
+
+Créer un nouveau projet java : 
+------------------------------
+
+File -> New -> Java Project
+Project Name : Monix_Java
+Next >
+
+(onglet Source) 
+Create new source folder
+Folder name : fake
+Finish
+
+(onglet Source) 
+Create new source folder
+Folder name : test
+Finish
+
+(onglet Source) 
+Create new source folder
+Folder name : config
+Finish
+
+(onglet Libraries) 
+Add Library... -> JUnit
+Next >
+Sélectionner JUnit 4
+Finish
+
+(onglet Libraries) 
+Add External JARs... -> 
+<path>/<to>/jemmy2.jar (e.g.: /usr/share/java/jemmy2.jar)
+Valider
+
+(onglet Libraries) 
+Add External JARs... -> 
+<path>/<to>/mockito-core.jar (e.g.: /usr/share/java/mockito-core.jar)
+Valider
+
+(onglet Libraries) 
+Add External JARs... -> 
+<path>/<to>/easymock.jar (e.g.: /usr/share/java/easymock.jar)
+Valider
+
+Remarque : utiliser une version easymock >= 3.2.
+
+Remarque : l'utilisation de easymock peut nécessiter les librairies cglib (cglib-nodep) et objenesis :
+
+Add External JARs... -> 
+<path>/<to>/cglib-nodep.jar (e.g.: /usr/share/java/cglib-nodep.jar)
+Valider
+Add External JARs... -> 
+<path>/<to>/objenesis.jar (e.g.: /usr/share/java/objenesis.jar)
+Valider
+
+Remarque : l'utilisation de mockito peut nécessiter les librairies byte-buddy (byte-byddy, byte-buddy-agent) et objenesis :
+
+Add External JARs... -> 
+<path>/<to>/byte-buddy.jar (e.g.: /usr/share/java/byte-buddy.jar)
+Valider
+Add External JARs... -> 
+<path>/<to>/byte-buddy-agent.jar (e.g.: /usr/share/java/byte-buddy-agent.jar)
+Valider
+Add External JARs... -> 
+<path>/<to>/objenesis.jar (e.g.: /usr/share/java/objenesis.jar)
+Valider
+
+Finish
+
+
+Remarque : il peut être nécessaire de préciser que les sources du projet sont en UTF-8 (clic droit sur le projet -> Properties -> Resource -> Text file encoding : Other |UTF-8|. 
+
+
+Importer les sources :
+----------------------
+
+(dans la vue Package Explorer)
+clique droit sur le projet
+Import...
+General > File System
+From directory : (Browse...) /<path>/<to>/<monix>/
+Valider
+(cliquer sur la flèche (ou le +) devant le répertoire du projet)
+sélectionner les répertoires "config", "src", "fake" et "test"
+Finish
+
+Configuration de l'exécution du logiciel :
+------------------------------------------
+
+Run -> Run Configurations...
+Java Application -> clique droit -> New
+Name : Monix Java
+Main class : (Search...) Monix - monix
+Apply
+
+Java Application -> clique droit -> New
+Name : Monix Java (Bouchon)
+Main class : (Search...) Monix - monix
+(onglet Arguments)
+Program arguments : -b
+Apply
+
+Close
+
+Configuration de l'exécution des tests unitaires :
+--------------------------------------------------
+
+Run -> Run Configurations...
+JUnit -> clique droit -> New
+Name : Monix Java Test
+sélectionner "Run a single test"
+Project : (Browse...) Monix_Java
+Test class : (Search...) MonixTestSuite - monix
+Test runner : JUnit 4
+Remarque : Si le message "Multiple launcher available" apparaît, 
+           clique sur "Select one..."
+           sélectionner "Use configuration specific settings"
+           Launchers : Eclipse JUnit Launcher
+           OK
+Apply
+Close
+

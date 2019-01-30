@@ -1,0 +1,49 @@
+2019-01-16 10:23:58,557 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2019-01-16 10:23:58,571 INFO o.a.j.JMeter: Loading user properties from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/user.properties
+2019-01-16 10:23:58,572 INFO o.a.j.JMeter: Loading system properties from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/system.properties
+2019-01-16 10:23:58,573 INFO o.a.j.JMeter: Loading additional properties from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java/jmeter/properties/user.properties
+2019-01-16 10:23:58,573 INFO o.a.j.JMeter: Setting System property: sun.java2d.xrender=false
+2019-01-16 10:23:58,578 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2019-01-16 10:23:58,578 INFO o.a.j.JMeter: Version 5.0 r1840935
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: java.version=1.8.0_191
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: os.name=Linux
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: os.arch=amd64
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: os.version=4.15.0-43-generic
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: file.encoding=UTF-8
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: Max memory     =1073741824
+2019-01-16 10:23:58,579 INFO o.a.j.JMeter: Available Processors =4
+2019-01-16 10:23:58,583 INFO o.a.j.JMeter: Default Locale=English (EN)
+2019-01-16 10:23:58,583 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2019-01-16 10:23:58,583 INFO o.a.j.JMeter: JMeterHome=/home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0
+2019-01-16 10:23:58,583 INFO o.a.j.JMeter: user.dir  =/home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java
+2019-01-16 10:23:58,584 INFO o.a.j.JMeter: PWD       =/home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java
+2019-01-16 10:23:58,584 INFO o.a.j.JMeter: IP: 127.0.1.1 Name: bart-Lenovo-Y50-70 FullName: bart-Lenovo-Y50-70
+2019-01-16 10:23:58,584 INFO o.a.j.JMeter: search_paths=./bin/
+2019-01-16 10:23:58,584 INFO o.a.j.JMeter: Adding to classpath and loader: ./bin/
+2019-01-16 10:23:58,844 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
+2019-01-16 10:23:58,918 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.bulenkov.darcula.DarculaLaf [Darcula]
+2019-01-16 10:23:58,919 INFO o.a.j.JMeter: Setting LAF to: com.bulenkov.darcula.DarculaLaf
+2019-01-16 10:23:59,002 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2019-01-16 10:23:59,479 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2019-01-16 10:23:59,480 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2019-01-16 10:24:00,523 INFO o.a.j.JMeter: Loading file: /home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java/jmeter/plan_test-ex0-hello.jmx
+2019-01-16 10:24:00,526 INFO o.a.j.s.FileServer: Default base='/home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java'
+2019-01-16 10:24:00,527 INFO o.a.j.s.FileServer: Set new base='/home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java/jmeter'
+2019-01-16 10:24:00,855 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-01-16 10:24:00,872 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-01-16 10:24:00,874 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-01-16 10:24:00,888 INFO o.a.j.s.SaveService: Loading file: /home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java/jmeter/plan_test-ex0-hello.jmx
+2019-01-16 10:24:01,030 INFO o.a.j.s.FileServer: Set new base='/home/bart/Documents/Imt/Qualité Logicielle/Tests/workspace/Morix_Java/jmeter'
+2019-01-16 10:24:01,247 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-01-16 10:24:01,248 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2019-01-16 10:24:01,248 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-01-16 10:24:01,248 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-01-16 10:24:01,940 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-01-16 10:24:01,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-01-16 10:24:01,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-01-16 10:24:01,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-01-16 10:24:01,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-01-16 10:24:01,942 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-01-16 10:24:02,361 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2019-01-16 10:24:02,361 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/proxyserver.jks

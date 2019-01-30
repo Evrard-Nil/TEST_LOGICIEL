@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="camix.service.CanalChat"/>
+<fullyQualifiedTypeName name="org.easymock.EasyMockRunner"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="org.junit.Ignore"/>
+<fullyQualifiedTypeName name="org.easymock.Mock"/>
+<fullyQualifiedTypeName name="camix.Camix"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Field"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="camix.service.ServiceChat"/>
+<fullyQualifiedTypeName name="camix.communication.ProtocoleChat"/>
+<fullyQualifiedTypeName name="camix.service.ServiceChatTestEasyMock"/>
+</qualifiedTypeNameHistroy>

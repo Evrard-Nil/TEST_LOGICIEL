@@ -1,0 +1,69 @@
+Felix Java v4.0
+
+-----------
+Description
+-----------
+
+Felix : Logiciel client chat.
+Programme à usage pédagogique.
+
+v4.0 : 
+- configuration dans le répertoire config ;
+- communication avec le composant Camix (BufferedReader et BufferedWriter) ;
+- vue connexion et vue chat ;
+- aucun test n'est implémenté.
+
+----------
+Dépendance
+----------
+
+Camix Java v4.0
+
+
+-------------------
+Import dans Eclipse
+-------------------
+
+Créer un nouveau projet java : 
+------------------------------
+
+File -> New -> Java Project
+Project Name : Felix_Java
+Next >
+
+(onglet Source) 
+Create new source folder
+Folder name : config
+Finish
+
+Finish
+
+
+Remarque : il peut être nécessaire de préciser que les sources du projet sont en UTF-8 (clic droit sur le projet -> Properties -> Resource -> Text file encoding : Other |UTF-8|.
+
+
+Importer les sources :
+----------------------
+
+(dans la vue Package Explorer)
+clique droit sur le projet
+Import...
+General > File System
+From directory : (Browse...) /<path>/<to>/<felix>/
+Valider
+(cliquer sur la flèche (ou le +) devant le répertoire du projet)
+sélectionner les répertoires "config" et "src"
+Finish
+
+
+Configuration de l'exécution du logiciel :
+------------------------------------------
+Run -> Run Configurations...
+Java Application -> clique droit -> New
+Name : Felix Java
+Main class : (Search...) Felix - felix
+Apply
+
+Close
+
+

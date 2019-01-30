@@ -126,7 +126,7 @@ public class FelixTestConnexionImpossible {
 	public void tearDown() throws Exception 
 	{
 		// 5 secondes d'observation par suspension du thread (objectif pédagogique).
-		final Long timeout = Long.valueOf(5000); 
+		final Long timeout = Long.valueOf(3000); 
 		Thread.sleep(timeout);
 	}
 	
@@ -261,4 +261,61 @@ public class FelixTestConnexionImpossible {
 		
 		// (TODO assertions)
 	}
+	
+	/**
+	 * Test la connexion lorsque Camix n'est pas lancé
+	 * 
+	 * @throws InterruptedException  pour la temporisation par suspension du thread.
+	 */
+	@Test
+	public void testConnexionSansCamix_ConnexionServiceNonCamix() throws InterruptedException
+	{
+		// 1,5 seconde d'observation par suspension du thread 
+		// entre chaque action (objectif pédagogique).
+		final Long timeout = Long.valueOf(1500); 
+		textePort.clearText();
+		texteIP.clearText();
+		
+		// Observation par suspension du thread (objectif pédagogique).
+		Thread.sleep(timeout);		
+		
+		// Validation des valeurs des champs libellé prix du produit.
+		final String ipAttendu = "127.0.0.1";
+		final String portAttendu = "51074";
+		final String infoDefautAttendu = "Saisir l'adresse et le port du serveur chat.";
+		
+		textePort.setText(portAttendu);
+		texteIP.setText(ipAttendu);
+		labelInfos.setText(infoDefautAttendu);
+		
+		try {
+			// Attente du message d'information.
+			labelInfos.waitText(infoDefautAttendu);
+		} 
+		catch (TimeoutExpiredException e) {
+			Assert.fail("Informations par defaut invalide.");
+		}
+		
+		// Observation par suspension du thread (objectif pédagogique).
+		Thread.sleep(timeout);
+		
+		boutonConnexion.clickMouse();
+		
+		
+		// Validation des valeurs des champs libellé prix du produit ainsi que du ticket.
+		final String infoAttendu = "Connexion au chat @"+ipAttendu+":"+portAttendu+" impossible";
+		
+		try {
+			// Attente du message d'information de l'achat.
+			labelInfos.waitText(infoAttendu);
+		} 
+		catch (TimeoutExpiredException e) {
+			Assert.fail("Information d'échec de connexion invalide.");
+		}		
+		
+		// Observation par suspension du thread (objectif pédagogique).
+		Thread.sleep(timeout);
+		
+		// (TODO assertions)
+	}	
 }

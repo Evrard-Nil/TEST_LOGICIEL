@@ -1,0 +1,75 @@
+Camix Java v4.0
+
+-----------
+Description
+-----------
+
+Camix : Logiciel serveur chat.
+Programme à usage pédagogique.
+
+v4.0 : 
+- configuration dans le répertoire config ;
+- communication avec le composant Felix (BufferedReader et BufferedWriter) ;
+- aucun test unitaire.
+
+
+----------
+Dépendance
+----------
+
+Recommandée à l'usage :
+-----------------------
+
+Felix v3.0
+
+
+-------------------
+Import dans Eclipse
+-------------------
+
+Créer un nouveau projet java : 
+------------------------------
+
+Créer un nouveau projet java : 
+
+File -> New -> Java Project
+Project Name : Camix_Java
+Next >
+
+(onglet Source) 
+Create new source folder
+Folder name : config
+Finish
+
+Finish
+
+
+Remarque : il peut être nécessaire de préciser que les sources du projet sont en UTF-8 (clic droit sur le projet -> Properties -> Resource -> Text file encoding : Other |UTF-8|. 
+
+
+Importer les sources :
+---------------------
+
+(dans la vue Package Explorer)
+clique droit sur le projet
+Import...
+General > File System
+From directory : (Browse...) /<path>/<to>/<camix>/
+Valider
+(cliquer sur la flèche (ou le +) devant le répertoire du projet)
+sélectionner les répertoires "config" et "src"
+Finish
+
+
+Configuration de l'exécution du logiciel :
+------------------------------------------
+
+Run -> Run Configurations...
+Java Application -> clique droit -> New
+Name : Camix Java
+Main class : (Search...) Camix - camix
+Apply
+Close
+
+EOF
+

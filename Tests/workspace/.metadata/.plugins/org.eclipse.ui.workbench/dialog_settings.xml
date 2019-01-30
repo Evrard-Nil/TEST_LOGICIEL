@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="598" key="DIALOG_X_ORIGIN"/>
+		<item value="154" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="-1" key="dialogHeight"/>
+		<item value="-1" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.import.FileSystem" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jst.ejb.ui"/>
+			<item value="org.eclipse.buildship.ui.importwizards"/>
+			<item value="org.eclipse.equinox.p2.category"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.pde.ui.PluginDevelopment"/>
+			<item value="org.eclipse.debug.ui"/>
+			<item value="org.eclipse.team.ui.importWizards"/>
+			<item value="org.eclipse.wst.web.ui"/>
+			<item value="org.eclipse.ui.Other"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/home/bart/Documents/Imt/Qualité Logicielle/Tests/Monix_Java-v5.2"/>
+			<item value="/home/bart/Documents/Imt/Qualité Logicielle/Tests/Felix_Java-v0.4"/>
+			<item value="/home/bart/Documents/Imt/Qualité Logicielle/Tests/Camix_Java-v0.4"/>
+			<item value="/home/bart/Documents/Imt/Qualité Logicielle/Tests/Felix_Java-v0.3"/>
+			<item value="/home/bart/Documents/Imt/Qualité Logicielle/Tests/HelloJUnit"/>
+			<item value="/home/bart/Documents/Imt/Qualité Logicielle/Tests/Morix_Java-v5.1"/>
+			<item value="/home/bart/Documents/Imt/Qualité Logicielle/Tests/Monix_Java-v5.1"/>
+		</list>
+	</section>
+</section>
