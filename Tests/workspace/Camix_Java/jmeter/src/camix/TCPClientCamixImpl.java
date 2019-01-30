@@ -25,7 +25,7 @@ import org.apache.jmeter.samplers.SampleResult;
  * @see org.apache.jmeter.protocol.tcp.sampler.TCPClient
  * 
  */
-public class TCPClientMorixImpl implements TCPClient
+public class TCPClientCamixImpl implements TCPClient
 {
 	/**
 	 * Encodage (charset) utilisé pour la communication.
@@ -41,7 +41,7 @@ public class TCPClientMorixImpl implements TCPClient
 	/**
 	 * Constructeur d'un client TCP à utiliser avec JMeter.
 	 */
-	public TCPClientMorixImpl()
+	public TCPClientCamixImpl()
 	{
 		super();
 	}
