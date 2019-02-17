@@ -12,16 +12,15 @@ import camix.communication.ProtocoleChat;
  * Classe service chat de Camix.
  * 
  * @version 3.0
- * @author Matthias Brun 
+ * @author Matthias Brun
  * 
  */
-public final class ServiceChat
-{
+public final class ServiceChat {
 	/**
 	 * La connexion du serveur.
 	 */
 	private ConnexionServeur connexion;
-	
+
 	/**
 	 * L'ensemble des canaux du chat.
 	 */
@@ -32,70 +31,70 @@ public final class ServiceChat
 	 */
 	private CanalChat canalDefaut;
 
-	
 	/**
 	 * Constructeur d'un service chat.
 	 *
-	 * @param canal le nom du canal par défaut.
-	 * @param port le port d'écoute du service.
+	 * @param canal
+	 *            le nom du canal par défaut.
+	 * @param port
+	 *            le port d'écoute du service.
 	 * 
-	 * @throws IOException exception d'entrée/sortie.
+	 * @throws IOException
+	 *             exception d'entrée/sortie.
 	 */
-	public ServiceChat(String canal) throws IOException
-	{
+	public ServiceChat(String canal) throws IOException {
 		// Création de l'ensemble des canaux.
 		this.canaux = new Hashtable<String, CanalChat>();
 
 		// Création du canal par défaut.
 		this.canalDefaut = new CanalChat(canal);
 		this.canaux.put(this.canalDefaut.donneNom(), this.canalDefaut);
-		
-		//this.lanceService(port);
+
+		// this.lanceService(port);
 	}
 
 	/**
 	 * Lancement du service du chat.
 	 *
-	 * @param port le port d'écoute du service.
+	 * @param port
+	 *            le port d'écoute du service.
 	 * 
-	 * @throws IOException exception d'entrée/sortie.
+	 * @throws IOException
+	 *             exception d'entrée/sortie.
 	 */
-	public void lanceService(Integer port) throws IOException
-	{		
+	public void lanceService(Integer port) throws IOException {
 		// Ouverture de la connexion serveur.
 		try {
 			this.connexion = new ConnexionServeur(port);
-		}
-		catch (IOException ex) {
+		} catch (IOException ex) {
 			System.err.print("Problème de création de la connexion serveur.");
 			throw ex;
 		}
-		
+
 		// Lancement du service.
 		try {
 			this.service();
-		}
-		catch (IOException ex) {
+		} catch (IOException ex) {
 			System.err.print("Problème lors du service du chat.");
 			this.ferme();
 			throw ex;
 		}
 	}
-	
+
 	/**
 	 * Lancement du service du chat.
 	 * 
-	 * @throws IOException exception d'entrée/sortie.
+	 * @throws IOException
+	 *             exception d'entrée/sortie.
 	 *
 	 * @see ServiceChatClient
 	 */
-	private void service() throws IOException 
-	{
+	private void service() throws IOException {
 		// Mise en écoute sur la socket serveur.
 		while (true) {
 			// Attente et acceptation d'un client pour le chat.
 			final Socket socket = this.connexion.accepteConnexionClient();
-			
+
 			// Création d'un client.
 			final ClientChat client = new ClientChat(this, socket, "?", this.canalDefaut);
 
@@ -104,10 +103,10 @@ public final class ServiceChat
 
 			// Lancement d'un thread de service au client.
 			client.lanceService();
-			
+
 			// Informations d'arrivée d'un nouveau client dans le chat.
 			this.informeArriveeClient(client);
-			
+
 			System.out.println("Ouverture connexion client (id : " + client.donneId() + ")");
 		}
 	}
@@ -115,32 +114,36 @@ public final class ServiceChat
 	/**
 	 * Fermeture du chat.
 	 *
-	 * @throws IOException exception d'entrée/sortie.
+	 * @throws IOException
+	 *             exception d'entrée/sortie.
 	 */
-	private void ferme() throws IOException
-	{
+	private void ferme() throws IOException {
 		// Fermeture de la connexion serveur.
 		try {
 			this.connexion.ferme();
-		} 
-		catch (IOException ex) {
+		} catch (IOException ex) {
 			System.err.println("Problème de fermeture de la connexion.");
 			throw ex;
-		}	
+		}
 	}
-	
+
 	/**
 	 * Informe de l'arrivée d'un client dans le chat.
 	 *
-	 * <p>Le message d'arrivée d'un client dans le chat est envoyé à tous les clients du canal par défaut.</p>
-	 * <p>Le message d'accueil d'un client dans le chat est envoyé au nouveau client."</p>
+	 * <p>
+	 * Le message d'arrivée d'un client dans le chat est envoyé à tous les clients
+	 * du canal par défaut.
+	 * </p>
+	 * <p>
+	 * Le message d'accueil d'un client dans le chat est envoyé au nouveau client."
+	 * </p>
 	 *
-	 * @param client le nouveau client.
+	 * @param client
+	 *            le nouveau client.
 	 * 
 	 * @see ProtocoleChat
 	 */
-	private void informeArriveeClient(ClientChat client)
-	{
+	private void informeArriveeClient(ClientChat client) {
 		String message;
 
 		message = String.format(ProtocoleChat.MESSAGE_ARRIVEE_CHAT, this.canalDefaut.donneNom());
@@ -153,34 +156,42 @@ public final class ServiceChat
 	/**
 	 * Informe du départ d'un client du chat.
 	 *
-	 * <p>Le message de départ d'un client du chat est envoyé aux clients du canal du client partant.</p>
+	 * <p>
+	 * Le message de départ d'un client du chat est envoyé aux clients du canal du
+	 * client partant.
+	 * </p>
 	 *
-	 * @param client le client qui quitte le chat.
+	 * @param client
+	 *            le client qui quitte le chat.
 	 * 
 	 * @see ProtocoleChat
 	 */
-	public void informeDepartClient(ClientChat client)
-	{
+	public void informeDepartClient(ClientChat client) {
 		String message;
 
 		message = String.format(ProtocoleChat.MESSAGE_DEPART_CHAT, client.donneSurnom());
 		client.envoieContacts(message);
 	}
 
-
 	/**
 	 * Change le surnom d'un client.
 	 * 
-	 * <p>Le nouveau surnom n'est pas contraint.</p>
-	 * <p>Le message de changement de surnom du client est émis dans le canal du client.</p>
+	 * <p>
+	 * Le nouveau surnom n'est pas contraint.
+	 * </p>
+	 * <p>
+	 * Le message de changement de surnom du client est émis dans le canal du
+	 * client.
+	 * </p>
 	 *
-	 * @param client le client concerné.
-	 * @param surnom le nouveau surnom.
+	 * @param client
+	 *            le client concerné.
+	 * @param surnom
+	 *            le nouveau surnom.
 	 * 
-	 * @see ProtocoleChat 
+	 * @see ProtocoleChat
 	 */
-	public void changeSurnomClient(ClientChat client, String surnom)
-	{
+	public void changeSurnomClient(ClientChat client, String surnom) {
 		final String ancienSurnom = client.donneSurnom();
 		String message;
 
@@ -192,17 +203,25 @@ public final class ServiceChat
 	/**
 	 * Change le canal d'un client.
 	 * 
-	 * <p>Le canal voulu doit exister. S'il n'existe pas, le client ne change pas de canal.</p>
-	 * <p>Un message de départ du client est émis dans le canal que quitte le client.</p>
-	 * <p>Un message d'arrivée du client est émis dans le canal que rejoint le client.</p>
+	 * <p>
+	 * Le canal voulu doit exister. S'il n'existe pas, le client ne change pas de
+	 * canal.
+	 * </p>
+	 * <p>
+	 * Un message de départ du client est émis dans le canal que quitte le client.
+	 * </p>
+	 * <p>
+	 * Un message d'arrivée du client est émis dans le canal que rejoint le client.
+	 * </p>
 	 *
-	 * @param client le client concerné.
-	 * @param nom le nom du nouveau canal.
+	 * @param client
+	 *            le client concerné.
+	 * @param nom
+	 *            le nom du nouveau canal.
 	 * 
-	 * @see ProtocoleChat 
+	 * @see ProtocoleChat
 	 */
-	public void changeCanalClient(ClientChat client, String nom)
-	{
+	public void changeCanalClient(ClientChat client, String nom) {
 		// Synchronization :
 		// Pour éviter de bouger un client dans un canal en cours de suppression.
 		synchronized (this.canaux) {
@@ -210,14 +229,14 @@ public final class ServiceChat
 			String message;
 
 			if (canal != null) {
-				message  = String.format(ProtocoleChat.MESSAGE_DEPART_CANAL, 
-									client.donneSurnom(), client.donneCanal().donneNom());
+				message = String.format(ProtocoleChat.MESSAGE_DEPART_CANAL, client.donneSurnom(),
+						client.donneCanal().donneNom());
 				client.envoieCanal(message);
 
 				client.changeCanal(canal);
 
-				message  = String.format(ProtocoleChat.MESSAGE_ARRIVEE_CANAL, 
-									client.donneSurnom(), client.donneCanal().donneNom());
+				message = String.format(ProtocoleChat.MESSAGE_ARRIVEE_CANAL, client.donneSurnom(),
+						client.donneCanal().donneNom());
 				client.envoieCanal(message);
 			} else {
 				message = String.format(ProtocoleChat.MESSAGE_NON_EXISTENCE_CANAL_DEMANDE);
@@ -229,18 +248,27 @@ public final class ServiceChat
 	/**
 	 * Ajoute un canal au chat.
 	 *
-	 * <p>Le nom du canal n'est pas contraint.</p>
-	 * <p>Si un canal du même nom existe déjà, le canal n'est pas créé 
-	 * et un message d'impossibilité de création de canal est émis au client à l'origine de la commande.</p>
-	 * <p>Si le canal est créé un message de création de canal est émis au client à l'origine de la commande.</p>
+	 * <p>
+	 * Le nom du canal n'est pas contraint.
+	 * </p>
+	 * <p>
+	 * Si un canal du même nom existe déjà, le canal n'est pas créé et un message
+	 * d'impossibilité de création de canal est émis au client à l'origine de la
+	 * commande.
+	 * </p>
+	 * <p>
+	 * Si le canal est créé un message de création de canal est émis au client à
+	 * l'origine de la commande.
+	 * </p>
 	 *
-	 * @param client le client à l'origine de la commande.
-	 * @param nom le nom du nouveau canal.
+	 * @param client
+	 *            le client à l'origine de la commande.
+	 * @param nom
+	 *            le nom du nouveau canal.
 	 * 
-	 * @see ProtocoleChat 
+	 * @see ProtocoleChat
 	 */
-	public void ajouteCanal(ClientChat client, String nom)
-	{
+	public void ajouteCanal(ClientChat client, String nom) {
 		String message;
 
 		// Synchronization :
@@ -262,23 +290,32 @@ public final class ServiceChat
 	/**
 	 * Supprime un canal du chat (si le canal est vide).
 	 *
-	 * <p>Tout client peut supprimer un canal.</p>
-	 * <p>Le client à l'origine de la commande de suppression reçoit le message
-	 * de suppression du canal si le canal est bien supprimé.</p> 
-	 * <p>Le canal est supprimé uniquement s'il existe et qu'il est vide. 
-	 * Dans le cas contraire, les messages de non existence du canal ou de canal 
-	 * non vide sont respectivement émis au client à l'origine de la commande.</p>
-	 * <p>Le canal par défaut du chat ne peut pas être supprimé. 
-	 * Une tentative de suppression de ce canal retourne le message d'impossibilité de 
-	 * supprimer le canal par défaut du chat au client à l'origine de la commande.</p> 
+	 * <p>
+	 * Tout client peut supprimer un canal.
+	 * </p>
+	 * <p>
+	 * Le client à l'origine de la commande de suppression reçoit le message de
+	 * suppression du canal si le canal est bien supprimé.
+	 * </p>
+	 * <p>
+	 * Le canal est supprimé uniquement s'il existe et qu'il est vide. Dans le cas
+	 * contraire, les messages de non existence du canal ou de canal non vide sont
+	 * respectivement émis au client à l'origine de la commande.
+	 * </p>
+	 * <p>
+	 * Le canal par défaut du chat ne peut pas être supprimé. Une tentative de
+	 * suppression de ce canal retourne le message d'impossibilité de supprimer le
+	 * canal par défaut du chat au client à l'origine de la commande.
+	 * </p>
 	 *
-	 * @param client le client à l'origine de la commande.
-	 * @param nom le nom du canal à supprimer.
+	 * @param client
+	 *            le client à l'origine de la commande.
+	 * @param nom
+	 *            le nom du canal à supprimer.
 	 * 
-	 * @see ProtocoleChat 
+	 * @see ProtocoleChat
 	 */
-	public void supprimeCanal(ClientChat client, String nom)
-	{
+	public void supprimeCanal(ClientChat client, String nom) {
 		String message;
 
 		// Synchronization :
@@ -289,7 +326,7 @@ public final class ServiceChat
 				// Le canal existe.
 				if (canal != this.canalDefaut) {
 					// Le canal n'est pas le canal par défaut du chat.
-					if (canal.donneNombreClients() == 0) {					
+					if (canal.donneNombreClients() == 0) {
 						// Le canal est vide (sans client).
 						this.canaux.remove(nom);
 						message = String.format(ProtocoleChat.MESSAGE_SUPPRESSION_CANAL, nom);
@@ -299,8 +336,8 @@ public final class ServiceChat
 					}
 				} else {
 					// Le canal est le canal par défaut du chat.
-					message = String.format(ProtocoleChat.MESSAGE_SUPPRESSION_CANAL_PAR_DEFAUT, 
-								this.canalDefaut.donneNom());
+					message = String.format(ProtocoleChat.MESSAGE_SUPPRESSION_CANAL_PAR_DEFAUT,
+							this.canalDefaut.donneNom());
 				}
 			} else {
 				// Le canal n'existe pas.
@@ -313,15 +350,17 @@ public final class ServiceChat
 	/**
 	 * Afficher les canaux disponibles dans le chat.
 	 *
-	 * <p>Les canaux disponibles ainsi que le nombre de clients par canaux 
-	 * sont envoyés au client à l'origine de la requête."</p>
+	 * <p>
+	 * Les canaux disponibles ainsi que le nombre de clients par canaux sont envoyés
+	 * au client à l'origine de la requête."
+	 * </p>
 	 *
-	 * @param client le client à qui afficher les canaux.
+	 * @param client
+	 *            le client à qui afficher les canaux.
 	 * 
-	 * @see ProtocoleChat 
+	 * @see ProtocoleChat
 	 */
-	public void afficheCanaux(ClientChat client)
-	{
+	public void afficheCanaux(ClientChat client) {
 		String message = String.format(ProtocoleChat.MESSAGE_CANAUX_DISPONIBLES_EN_TETE);
 
 		// Pour chaque canaux.
@@ -329,10 +368,8 @@ public final class ServiceChat
 
 		while (iter.hasNext()) {
 			final CanalChat canal = this.canaux.get(iter.next());
-			message = message.concat(
-				String.format(ProtocoleChat.MESSAGE_CANAUX_DISPONIBLES_CANAL, 
-						canal.donneNom(), canal.donneNombreClients())
-			);
+			message = message.concat(String.format(ProtocoleChat.MESSAGE_CANAUX_DISPONIBLES_CANAL, canal.donneNom(),
+					canal.donneNombreClients()));
 		}
 		client.envoieMessage(message);
 	}
@@ -340,27 +377,30 @@ public final class ServiceChat
 	/**
 	 * Afficher les informations personnelles sur un client.
 	 *
-	 * <p>Les informations personnelles du client sont émis au client à l'origine de la requête.</p>
+	 * <p>
+	 * Les informations personnelles du client sont émis au client à l'origine de la
+	 * requête.
+	 * </p>
 	 *
-	 * @param client le client concerné.
+	 * @param client
+	 *            le client concerné.
 	 * 
-	 * @see ProtocoleChat 
+	 * @see ProtocoleChat
 	 */
-	public void afficheInformationsClient(ClientChat client)
-	{
-		final String message = String.format(ProtocoleChat.MESSAGE_INFORMATIONS_PERSONNELLES, 
-							client.donneSurnom(), client.donneCanal().donneNom());
-		
+	public void afficheInformationsClient(ClientChat client) {
+		final String message = String.format(ProtocoleChat.MESSAGE_INFORMATIONS_PERSONNELLES, client.donneSurnom(),
+				client.donneCanal().donneNom());
+
 		client.envoieMessage(message);
 	}
 
 	/**
 	 * Afficher l'aide sur les commandes (et services) disponibles dans le chat.
 	 *
-	 * @param client le client à qui afficher l'aide.
+	 * @param client
+	 *            le client à qui afficher l'aide.
 	 */
-	public void afficheAide(ClientChat client)
-	{
+	public void afficheAide(ClientChat client) {
 		final String message = String.format(ProtocoleChat.MESSAGE_AIDE);
 
 		client.envoieMessage(message);
@@ -369,37 +409,35 @@ public final class ServiceChat
 	/**
 	 * Fermeture d'une connexion avec un client.
 	 *
-	 * @param client le client concerné.
+	 * @param client
+	 *            le client concerné.
 	 *
 	 */
-	public void fermeConnexion(ClientChat client) 
-	{
+	public void fermeConnexion(ClientChat client) {
 		System.out.println("Fermeture connexion client (id : " + client.donneId() + ").");
 
 		// Information de déconnexion du client.
 		this.informeDepartClient(client);
-		
+
 		// Fermeture de la connexion du client.
 		client.fermeConnexion();
 	}
-	
+
 	/**
-	 * Fermeture d'une connexion avec un client lorsque celui-ci utilise la commande /q.
+	 * Fermeture d'une connexion avec un client lorsque celui-ci utilise la commande
+	 * /q.
 	 *
-	 * @param client le client concerné.
+	 * @param client
+	 *            le client concerné.
 	 *
 	 */
-	public void fermeConnexionCommande(ClientChat client) 
-	{
+	public void fermeConnexionCommande(ClientChat client) {
 		System.out.println("Fermeture connexion client (id : " + client.donneId() + ").");
-		
+
 		// Envoie à un message au client quittant le chat
 		final String message = String.format(ProtocoleChat.MESSAGE_SORTIE_CHAT);
 		client.envoieMessage(message);
-		
-		// Information de déconnexion du client.
-		this.informeDepartClient(client);
-		
+
 		// Fermeture de la connexion du client.
 		client.fermeConnexionCommande();
 	}

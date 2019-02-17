@@ -1,5 +1,6 @@
 package vue;
 
+import java.awt.event.KeyEvent;
 import java.lang.reflect.InvocationTargetException;
 
 import org.junit.After;
@@ -8,7 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.netbeans.jemmy.ClassReference;
 import org.netbeans.jemmy.JemmyProperties;
-import org.netbeans.jemmy.TimeoutExpiredException;
 import org.netbeans.jemmy.operators.JButtonOperator;
 import org.netbeans.jemmy.operators.JFrameOperator;
 import org.netbeans.jemmy.operators.JLabelOperator;
@@ -32,7 +32,7 @@ import felix.Felix;
  * @author Barthélémy Tek
  *
  */
-public class FelixTestConnexionPossible {
+public class FelixTestCommandeQuitter {
 
 	/**
 	 * L'application à tester.
@@ -47,9 +47,7 @@ public class FelixTestConnexionPossible {
 	/**
 	 * Nombre d'instances d'application Felix impliquées dans le test.
 	 */
-	private static final int NBINSTANCES = 4;
-
-	private static int instanceCourrante = 0;
+	private static final int NBINSTANCES = 2;
 
 	/**
 	 * Les paramètres de lancement de l'application.
@@ -127,9 +125,9 @@ public class FelixTestConnexionPossible {
 
 		// Démarrage de l'instance de Felix nécessaire aux tests.
 		try {
-			FelixTestConnexionPossible.application = new ClassReference("felix.Felix");
-			FelixTestConnexionPossible.parametres = new String[1];
-			FelixTestConnexionPossible.parametres[0] = ""; // "-b" en mode bouchonné, "" en mode collaboration avec
+			FelixTestCommandeQuitter.application = new ClassReference("felix.Felix");
+			FelixTestCommandeQuitter.parametres = new String[1];
+			FelixTestCommandeQuitter.parametres[0] = ""; // "-b" en mode bouchonné, "" en mode collaboration avec
 															// Camix;
 
 			lanceInstancesFelix();
@@ -157,7 +155,6 @@ public class FelixTestConnexionPossible {
 		// 5 secondes d'observation par suspension du thread (objectif pédagogique).
 		final Long timeout = Long.valueOf(5000);
 		Thread.sleep(timeout);
-		instanceCourrante++;
 	}
 
 	/**
@@ -169,7 +166,7 @@ public class FelixTestConnexionPossible {
 	private static void lanceInstance(int i) throws Exception {
 		try {
 			// Lancement d'une application.
-			FelixTestConnexionPossible.application.startApplication(FelixTestConnexionPossible.parametres);
+			FelixTestCommandeQuitter.application.startApplication(FelixTestCommandeQuitter.parametres);
 		} catch (InvocationTargetException e) {
 
 			Assert.fail("Problème d'invocation de l'application : " + e.getMessage());
@@ -289,85 +286,6 @@ public class FelixTestConnexionPossible {
 	 *             pour la temporisation par suspension du thread.
 	 */
 	@Test
-	public void testConnexionAvecCamix_adresseEtPortDefauts() throws InterruptedException {
-		// 1,5 seconde d'observation par suspension du thread
-		// entre chaque action (objectif pédagogique).
-		final Long timeout = Long.valueOf(1500);
-
-		boutonConnexion[instanceCourrante].clickMouse();
-
-		// Observation par suspension du thread (objectif pédagogique).
-		Thread.sleep(timeout);
-
-		final String messageAttendu = "* Taper /h pour avoir de l'aide sur les commandes du chat.\n\n";
-
-		// Récupération de la vue Chat
-		recuperationVueChat(instanceCourrante);
-
-		Assert.assertEquals(messageAttendu, messages[instanceCourrante].getText());
-
-	}
-
-	/**
-	 * Test la connexion lorsque Camix est lancé, avec la bonnex adresse et le bon
-	 * port
-	 * 
-	 * @throws InterruptedException
-	 *             pour la temporisation par suspension du thread.
-	 */
-	@Test
-	public void testConnexionAvecCamix_adresseEtPortValides() throws InterruptedException {
-		// 1,5 seconde d'observation par suspension du thread
-		// entre chaque action (objectif pédagogique).
-		final Long timeout = Long.valueOf(1500);
-		textePort[instanceCourrante].clearText();
-		texteIP[instanceCourrante].clearText();
-
-		// Observation par suspension du thread (objectif pédagogique).
-		Thread.sleep(timeout);
-
-		// Validation des valeurs des champs libellé prix du produit.
-		final String ipAttendu = "127.0.0.1";
-		final String portAttendu = "12345";
-		final String infoDefautAttendu = "Saisir l'adresse et le port du serveur chat.";
-
-		textePort[instanceCourrante].setText(portAttendu);
-		texteIP[instanceCourrante].setText(ipAttendu);
-		labelInfos[instanceCourrante].setText(infoDefautAttendu);
-
-		try {
-			// Attente du message d'information.
-			labelInfos[instanceCourrante].waitText(infoDefautAttendu);
-		} catch (TimeoutExpiredException e) {
-			Assert.fail("Informations par defaut invalide.");
-		}
-
-		// Observation par suspension du thread (objectif pédagogique).
-		Thread.sleep(timeout);
-
-		boutonConnexion[instanceCourrante].clickMouse();
-
-		// Observation par suspension du thread (objectif pédagogique).
-		Thread.sleep(timeout);
-
-		final String messageAttendu = "* Taper /h pour avoir de l'aide sur les commandes du chat.\n\n";
-
-		// Récupération de la vue Chat
-		recuperationVueChat(instanceCourrante);
-
-		Assert.assertEquals(messageAttendu, messages[instanceCourrante].getText());
-
-	}
-
-	/**
-	 * Test la connexion lorsque Camix est lancé, avec la bonnex adresse et le bon
-	 * port
-	 * 
-	 * @throws InterruptedException
-	 *             pour la temporisation par suspension du thread.
-	 */
-
-	@Test
 	public void testConnexionAvecCamix_deuxInstances() throws InterruptedException, Exception {
 		// 1,5 seconde d'observation par suspension du thread
 		// entre chaque action (objectif pédagogique).
@@ -376,23 +294,49 @@ public class FelixTestConnexionPossible {
 		// Observation par suspension du thread (objectif pédagogique).
 		Thread.sleep(timeout);
 
-		boutonConnexion[2].clickMouse();
-
-		// Observation par suspension du thread (objectif pédagogique).
-		Thread.sleep(timeout);
-
-		// Récupération de la vue Chat
-		recuperationVueChat(2);
-
-		final String messageAvantConnexion = messages[2].getText();
-
-		boutonConnexion[3].clickMouse();
-
-		final String messageAttendu = messageAvantConnexion
-				+ "* Un nouvel utilisateur est dans le chat (place publique).\n\n";
+		// Connexion sur la première instance
+		boutonConnexion[0].clickMouse();
 
 		Thread.sleep(timeout);
 
-		Assert.assertEquals(messageAttendu, messages[2].getText());
+		// Récupération de la vue Chat de la première instance
+		recuperationVueChat(0);
+
+		Thread.sleep(timeout);
+
+		// Connexion sur la deuxième instance
+		boutonConnexion[1].clickMouse();
+
+		Thread.sleep(timeout);
+
+		// Récupération de la vue Chat de la deuxième instance
+		recuperationVueChat(1);
+
+		Thread.sleep(timeout);
+
+		// Messages attendus
+		final String messageAvantQuitter = messages[0].getText();
+		final String messageDeuxAvantQuitter = messages[1].getText();
+
+		final String messageAttendu = messageAvantQuitter + "* ? quitte le chat.\n\n";
+		final String messageAttenduDeux = messageDeuxAvantQuitter + "* Sortie du chat.\n";
+
+		Thread.sleep(timeout);
+
+		// Ecriture du message /q
+		textMessages[1].setText("/q");
+
+		Thread.sleep(timeout);
+
+		// Envoie de la commande
+		textMessages[1].getFocus();
+		textMessages[1].pressKey(KeyEvent.VK_ENTER);
+
+		Thread.sleep(timeout);
+
+		// Assertions
+		Assert.assertEquals(messageAttendu, messages[0].getText());
+		Assert.assertEquals(messageAttenduDeux, messages[1].getText());
+
 	}
 }

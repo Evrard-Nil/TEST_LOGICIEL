@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 import camix.communication.ProtocoleChat;
 
 @RunWith(EasyMockRunner.class)
-public class ServiceChatTestEasyMock {
+public class ServiceChatTestEasyMock_QuitterCommande {
 
 	/**
 	 * Client utilisé pour les tests
@@ -63,11 +63,9 @@ public class ServiceChatTestEasyMock {
 	 * </p>
 	 */
 	@Test(timeout = 2000)
-	public void test_informeDepartClient() {
+	public void test_fermeConnexionCommande() {
 
-		String surnom = "Test Surnom";
-
-		String message = String.format(ProtocoleChat.MESSAGE_DEPART_CHAT, surnom);
+		String message = String.format(ProtocoleChat.MESSAGE_SORTIE_CHAT);
 
 		ServiceChat service = null;
 		try {
@@ -76,14 +74,15 @@ public class ServiceChatTestEasyMock {
 			e.printStackTrace();
 		}
 
-		EasyMock.expect(this.clientMock.donneSurnom()).andReturn(surnom).times(1);
-		clientMock.envoieContacts(message);
+		EasyMock.expect(clientMock.donneId()).andReturn("123").times(1);
+		clientMock.envoieMessage(message);
+		clientMock.fermeConnexionCommande();
 
 		EasyMock.replay(this.clientMock);
 
 		// On ajoute deux fois le client pour simuler le fait d'avoir déjà le client
 		// dans notre canal
-		service.informeDepartClient(clientMock);
+		service.fermeConnexionCommande(clientMock);
 
 		EasyMock.verify(this.clientMock);
 	}

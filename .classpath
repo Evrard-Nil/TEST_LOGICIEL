@@ -9,7 +9,7 @@
 	<classpathentry kind="lib" path="libs/byte-buddy-agent-1.9.7.jar"/>
 	<classpathentry kind="lib" path="libs/cglib-nodep-3.2.10.jar"/>
 	<classpathentry kind="lib" path="libs/easymock-4.0.2.jar"/>
-	<classpathentry kind="lib" path="libs/jemmy-2.2.7.5.jar"/>
+	<classpathentry kind="lib" path="libs/jemmy-2.2.7.5.jar" sourcepath="/home/bart/.m2/repository/org/netbeans/jemmy/2.2.7.5/jemmy-2.2.7.5-sources.jar"/>
 	<classpathentry kind="lib" path="libs/mockito-core-2.23.4.jar"/>
 	<classpathentry kind="lib" path="libs/objenesis-3.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
