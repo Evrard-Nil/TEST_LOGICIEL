@@ -137,7 +137,10 @@ public class ClientChat extends Thread
 			System.err.println(ex.getMessage());
 		} 
 		finally {
-			this.chat.fermeConnexion(this);
+			
+			if (canal.estPresent(this)) {
+				this.chat.fermeConnexion(this);
+			}
 		}
 	}
 	
@@ -171,7 +174,7 @@ public class ClientChat extends Thread
 					this.chat.afficheInformationsClient(this);
 					break;
 				case ProtocoleChat.COMMANDE_FERMETURE_CLIENT : 
-					this.chat.fermeConnexion(this);
+					this.chat.fermeConnexionCommande(this);
 					break;
 				
 				default : 

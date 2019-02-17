@@ -246,6 +246,10 @@ public final class ProtocoleChat
 			+ ProtocoleChat.ESPACE_MESSAGE_AIDE + ProtocoleChat.COMMANDE_CARACTERE
 			+ ProtocoleChat.COMMANDE_AFFICHE_AIDE + " : afficher l'aide .%n";
 
+	/**
+	 * Message envoyé à un client utilisant la commande /q
+	 */
+	public static final String MESSAGE_SORTIE_CHAT = "* Sortie du chat.";
 	
 	/**
 	 * Constructeur privé d'un protocole de communication du chat.

@@ -382,4 +382,25 @@ public final class ServiceChat
 		// Fermeture de la connexion du client.
 		client.fermeConnexion();
 	}
+	
+	/**
+	 * Fermeture d'une connexion avec un client lorsque celui-ci utilise la commande /q.
+	 *
+	 * @param client le client concerné.
+	 *
+	 */
+	public void fermeConnexionCommande(ClientChat client) 
+	{
+		System.out.println("Fermeture connexion client (id : " + client.donneId() + ").");
+		
+		// Envoie à un message au client quittant le chat
+		final String message = String.format(ProtocoleChat.MESSAGE_SORTIE_CHAT);
+		client.envoieMessage(message);
+		
+		// Information de déconnexion du client.
+		this.informeDepartClient(client);
+		
+		// Fermeture de la connexion du client.
+		client.fermeConnexionCommande();
+	}
 }

@@ -29,7 +29,7 @@ import felix.controleur.VueFelix;
  * qui lance un thread de connexion au chat.
  *  
  * @version 4.0
- * @author Matthias Brun 
+ * @author Evrard-Nil Daillet
  *
  */
 public class VueConnexion extends VueFelix implements ActionListener, Runnable
