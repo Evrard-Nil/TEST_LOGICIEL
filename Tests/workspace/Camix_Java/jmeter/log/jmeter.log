@@ -1,8 +1,8 @@
-2019-02-17 23:52:30,683 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2019-02-17 23:52:30,700 INFO o.a.j.JMeter: Loading user properties from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/user.properties
-2019-02-17 23:52:30,700 INFO o.a.j.JMeter: Loading system properties from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/system.properties
-2019-02-17 23:52:30,701 INFO o.a.j.JMeter: Loading additional properties from: /home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter/properties/user.properties
-2019-02-17 23:52:30,702 WARN o.a.j.JMeter: Can't find additional property file: /home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter/properties/user.properties
+2019-02-18 01:08:07,196 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2019-02-18 01:08:07,210 INFO o.a.j.JMeter: Loading user properties from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/user.properties
+2019-02-18 01:08:07,211 INFO o.a.j.JMeter: Loading system properties from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/system.properties
+2019-02-18 01:08:07,211 INFO o.a.j.JMeter: Loading additional properties from: /home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter/properties/user.properties
+2019-02-18 01:08:07,212 WARN o.a.j.JMeter: Can't find additional property file: /home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter/properties/user.properties
 java.io.FileNotFoundException: /home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter/properties/user.properties (Aucun fichier ou dossier de ce type)
 	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_191]
 	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_191]
@@ -14,38 +14,454 @@ java.io.FileNotFoundException: /home/bart/Documents/Imt/Qualité Logicielle/git/
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_191]
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_191]
 	at org.apache.jmeter.NewDriver.main(NewDriver.java:245) [ApacheJMeter.jar:5.0 r1840935]
-2019-02-17 23:52:30,712 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: Version 5.0 r1840935
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: java.version=1.8.0_191
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: os.name=Linux
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: os.arch=amd64
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: os.version=4.15.0-44-generic
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: file.encoding=UTF-8
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: Max memory     =1073741824
-2019-02-17 23:52:30,713 INFO o.a.j.JMeter: Available Processors =4
-2019-02-17 23:52:30,717 INFO o.a.j.JMeter: Default Locale=English (EN)
-2019-02-17 23:52:30,718 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2019-02-17 23:52:30,718 INFO o.a.j.JMeter: JMeterHome=/home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0
-2019-02-17 23:52:30,718 INFO o.a.j.JMeter: user.dir  =/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java
-2019-02-17 23:52:30,718 INFO o.a.j.JMeter: PWD       =/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java
-2019-02-17 23:52:30,731 INFO o.a.j.JMeter: IP: 172.16.126.148 Name: bart FullName: dhcp-126-148.mde.emn.fr
-2019-02-17 23:52:30,922 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
-2019-02-17 23:52:31,168 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.bulenkov.darcula.DarculaLaf [Darcula]
-2019-02-17 23:52:31,168 INFO o.a.j.JMeter: Setting LAF to: com.bulenkov.darcula.DarculaLaf
-2019-02-17 23:52:31,249 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
-2019-02-17 23:52:31,718 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2019-02-17 23:52:31,718 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2019-02-17 23:52:36,813 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-02-17 23:52:36,814 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-02-17 23:52:36,814 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-02-17 23:52:36,814 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2019-02-17 23:52:36,814 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2019-02-17 23:52:36,814 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2019-02-17 23:52:37,287 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
-2019-02-17 23:52:37,287 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/proxyserver.jks
-2019-02-17 23:52:37,459 INFO o.a.j.s.FileServer: Default base='/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java'
-2019-02-17 23:52:37,844 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2019-02-17 23:52:37,844 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
-2019-02-17 23:52:37,844 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2019-02-17 23:52:37,844 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-02-18 01:08:07,216 INFO o.a.j.JMeter: Setting System property: sun.java2d.xrender=false
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: Version 5.0 r1840935
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: java.version=1.8.0_191
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: os.name=Linux
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: os.arch=amd64
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: os.version=4.15.0-44-generic
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: file.encoding=UTF-8
+2019-02-18 01:08:07,222 INFO o.a.j.JMeter: Max memory     =1073741824
+2019-02-18 01:08:07,223 INFO o.a.j.JMeter: Available Processors =4
+2019-02-18 01:08:07,227 INFO o.a.j.JMeter: Default Locale=English (EN)
+2019-02-18 01:08:07,228 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2019-02-18 01:08:07,228 INFO o.a.j.JMeter: JMeterHome=/home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0
+2019-02-18 01:08:07,228 INFO o.a.j.JMeter: user.dir  =/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java
+2019-02-18 01:08:07,228 INFO o.a.j.JMeter: PWD       =/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java
+2019-02-18 01:08:07,229 INFO o.a.j.JMeter: IP: 172.16.126.148 Name: bart FullName: dhcp-126-148.mde.emn.fr
+2019-02-18 01:08:07,466 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
+2019-02-18 01:08:07,540 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.bulenkov.darcula.DarculaLaf [Darcula]
+2019-02-18 01:08:07,541 INFO o.a.j.JMeter: Setting LAF to: com.bulenkov.darcula.DarculaLaf
+2019-02-18 01:08:07,658 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2019-02-18 01:08:08,181 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2019-02-18 01:08:08,182 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2019-02-18 01:08:09,172 INFO o.a.j.JMeter: Loading file: /home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter/Assertion Réponse.jmx
+2019-02-18 01:08:09,176 INFO o.a.j.s.FileServer: Default base='/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java'
+2019-02-18 01:08:09,179 INFO o.a.j.s.FileServer: Set new base='/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter'
+2019-02-18 01:08:09,511 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-02-18 01:08:09,537 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-02-18 01:08:09,539 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-02-18 01:08:09,544 INFO o.a.j.s.SaveService: Loading file: /home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter/Assertion Réponse.jmx
+2019-02-18 01:08:09,642 INFO o.a.j.s.FileServer: Set new base='/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/workspace/Camix_Java/jmeter'
+2019-02-18 01:08:09,828 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-02-18 01:08:09,829 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2019-02-18 01:08:09,829 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-02-18 01:08:09,829 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-02-18 01:08:10,430 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-18 01:08:10,431 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-18 01:08:10,431 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-18 01:08:10,431 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-02-18 01:08:10,431 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-02-18 01:08:10,431 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-02-18 01:08:10,842 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2019-02-18 01:08:10,843 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/proxyserver.jks
+2019-02-18 01:08:14,891 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:08:14,892 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:08:14,893 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:08:14,899 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:08:15,003 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:08:15,004 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:08:15,004 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:08:15,010 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:08:15,015 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:08:15,017 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:08:15,020 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:08:15,526 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:08:16,036 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:08:16,537 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:08:17,038 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:08:17,539 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:08:18,040 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:08:18,041 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:08:18,041 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:08:18,043 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:08:18,044 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:10:10,256 INFO o.a.j.u.JMeterUtils: Setting Locale to fr
+2019-02-18 01:18:14,863 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:18:14,863 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:18:14,870 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:18:14,990 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:18:14,990 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:18:14,991 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:18:14,991 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:18:14,994 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:18:14,995 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:18:14,995 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:18:15,497 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:18:15,999 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:18:16,501 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:18:17,002 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:18:17,503 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:18:18,004 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:18:18,004 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:18:18,005 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:18:18,005 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:18:18,005 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:19:00,535 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:19:00,537 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:19:00,538 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:19:00,640 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:19:00,641 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:19:00,641 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:19:00,641 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:19:00,642 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:19:00,642 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:19:00,643 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:19:01,145 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'morix.TCPClientMorixImpl'
+2019-02-18 01:19:01,647 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'morix.TCPClientMorixImpl'
+2019-02-18 01:19:02,148 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'morix.TCPClientMorixImpl'
+2019-02-18 01:19:02,649 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'morix.TCPClientMorixImpl'
+2019-02-18 01:19:03,150 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'morix.TCPClientMorixImpl'
+2019-02-18 01:19:03,652 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'morix.TCPClientMorixImpl'
+2019-02-18 01:19:03,653 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:19:03,653 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:19:03,654 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:19:03,655 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:19:21,282 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:19:21,283 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:19:21,284 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:19:21,378 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:19:21,378 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:19:21,378 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:19:21,378 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:19:21,379 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:19:21,379 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:19:21,379 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:19:21,881 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:19:22,383 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:19:22,884 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:19:23,386 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:19:23,887 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:19:24,388 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:19:24,388 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:19:24,388 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:19:24,389 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:19:24,389 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:19:55,604 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 127.0.0.1
+2019-02-18 01:19:55,726 ERROR o.a.j.e.DistributedRunner: Failed to create engine at 127.0.0.1
+java.rmi.ConnectIOException: Exception creating connection to: 127.0.0.1; nested exception is: 
+	java.io.FileNotFoundException: rmi_keystore.jks (Aucun fichier ou dossier de ce type)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:631) ~[?:1.8.0_191]
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216) ~[?:1.8.0_191]
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202) ~[?:1.8.0_191]
+	at sun.rmi.server.UnicastRef.newCall(UnicastRef.java:338) ~[?:1.8.0_191]
+	at sun.rmi.registry.RegistryImpl_Stub.lookup(RegistryImpl_Stub.java:112) ~[?:1.8.0_191]
+	at org.apache.jmeter.engine.ClientJMeterEngine.getEngine(ClientJMeterEngine.java:70) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.engine.ClientJMeterEngine.<init>(ClientJMeterEngine.java:83) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.engine.DistributedRunner.createEngine(DistributedRunner.java:236) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.engine.DistributedRunner.getClientEngine(DistributedRunner.java:213) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.engine.DistributedRunner.init(DistributedRunner.java:93) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.gui.action.RemoteStart.doAction(RemoteStart.java:80) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:88) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:70) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311) [?:1.8.0_191]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758) [?:1.8.0_191]
+	at java.awt.EventQueue.access$500(EventQueue.java:97) [?:1.8.0_191]
+	at java.awt.EventQueue$3.run(EventQueue.java:709) [?:1.8.0_191]
+	at java.awt.EventQueue$3.run(EventQueue.java:703) [?:1.8.0_191]
+	at java.security.AccessController.doPrivileged(Native Method) [?:1.8.0_191]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74) [?:1.8.0_191]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82) [?:1.8.0_191]
+Caused by: java.io.FileNotFoundException: rmi_keystore.jks (Aucun fichier ou dossier de ce type)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_191]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_191]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_191]
+	at java.io.FileInputStream.<init>(FileInputStream.java:93) ~[?:1.8.0_191]
+	at org.apache.jmeter.rmi.SSLRMIClientSocketFactory.loadStore(SSLRMIClientSocketFactory.java:125) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.rmi.SSLRMIClientSocketFactory.createSocket(SSLRMIClientSocketFactory.java:83) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613) ~[?:1.8.0_191]
+	... 26 more
+2019-02-18 01:19:58,769 INFO o.a.j.e.DistributedRunner: Failed to configure 127.0.0.1
+2019-02-18 01:19:58,769 INFO o.a.j.e.DistributedRunner: Stopping remote engines
+2019-02-18 01:19:58,770 INFO o.a.j.e.DistributedRunner: Remote engines have been stopped
+2019-02-18 01:19:58,770 ERROR o.a.j.g.a.ActionRouter: Error processing org.apache.jmeter.gui.action.RemoteStart@328572f0
+java.lang.RuntimeException: Following remote engines could not be configured:[127.0.0.1]
+	at org.apache.jmeter.engine.DistributedRunner.init(DistributedRunner.java:112) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.gui.action.RemoteStart.doAction(RemoteStart.java:80) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:88) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:70) ~[ApacheJMeter_core.jar:5.0 r1840935]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311) [?:1.8.0_191]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758) [?:1.8.0_191]
+	at java.awt.EventQueue.access$500(EventQueue.java:97) [?:1.8.0_191]
+	at java.awt.EventQueue$3.run(EventQueue.java:709) [?:1.8.0_191]
+	at java.awt.EventQueue$3.run(EventQueue.java:703) [?:1.8.0_191]
+	at java.security.AccessController.doPrivileged(Native Method) [?:1.8.0_191]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74) [?:1.8.0_191]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93) [?:1.8.0_191]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82) [?:1.8.0_191]
+2019-02-18 01:25:25,315 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:25:25,315 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:25:25,316 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:25:25,424 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:25:25,424 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:25:25,424 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:25:25,424 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:25:25,425 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:25:25,425 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:25:25,426 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:25:25,928 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:25:26,431 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:25:26,933 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:25:27,435 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:25:27,936 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:25:28,438 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:25:28,439 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:25:28,439 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:25:28,440 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:25:28,441 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:25:43,473 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:25:43,473 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:25:43,475 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:25:43,576 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:25:43,576 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:25:43,576 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:25:43,576 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:25:43,577 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:25:43,577 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:25:43,578 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:25:44,080 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'src.camix.TCPClientCamixImpl'
+2019-02-18 01:25:44,582 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'src.camix.TCPClientCamixImpl'
+2019-02-18 01:25:45,084 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'src.camix.TCPClientCamixImpl'
+2019-02-18 01:25:45,585 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'src.camix.TCPClientCamixImpl'
+2019-02-18 01:25:46,086 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'src.camix.TCPClientCamixImpl'
+2019-02-18 01:25:46,588 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'src.camix.TCPClientCamixImpl'
+2019-02-18 01:25:46,589 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:25:46,589 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:25:46,590 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:25:46,590 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:25:49,097 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:25:49,097 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:25:49,098 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:25:49,190 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:25:49,190 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:25:49,190 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:25:49,190 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:25:49,191 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:25:49,191 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:25:49,192 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:25:49,693 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:25:50,195 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:25:50,702 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:25:51,203 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:25:51,703 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:25:52,204 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:25:52,205 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:25:52,205 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:25:52,205 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:25:52,205 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:26:45,627 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:26:45,628 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:26:45,629 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:26:45,736 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:26:45,736 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:26:45,736 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:26:45,736 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:26:45,737 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:26:45,737 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:26:45,737 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:26:46,239 INFO o.a.j.p.t.s.TCPClientImpl: Using platform default charset:UTF-8
+2019-02-18 01:26:46,745 ERROR o.a.j.p.t.s.TCPSampler: 
+org.apache.jmeter.protocol.tcp.sampler.ReadException: Error reading from server, bytes read: 60
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:131) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPSampler.sample(TCPSampler.java:402) [ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253) [ApacheJMeter_core.jar:5.0 r1840935]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[?:1.8.0_191]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:114) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	... 6 more
+2019-02-18 01:26:47,250 INFO o.a.j.p.t.s.TCPClientImpl: Using platform default charset:UTF-8
+2019-02-18 01:26:47,752 ERROR o.a.j.p.t.s.TCPSampler: 
+org.apache.jmeter.protocol.tcp.sampler.ReadException: Error reading from server, bytes read: 60
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:131) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPSampler.sample(TCPSampler.java:402) [ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253) [ApacheJMeter_core.jar:5.0 r1840935]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[?:1.8.0_191]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:114) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	... 6 more
+2019-02-18 01:26:48,254 INFO o.a.j.p.t.s.TCPClientImpl: Using platform default charset:UTF-8
+2019-02-18 01:26:48,756 ERROR o.a.j.p.t.s.TCPSampler: 
+org.apache.jmeter.protocol.tcp.sampler.ReadException: Error reading from server, bytes read: 60
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:131) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPSampler.sample(TCPSampler.java:402) [ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253) [ApacheJMeter_core.jar:5.0 r1840935]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[?:1.8.0_191]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:114) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	... 6 more
+2019-02-18 01:26:49,258 INFO o.a.j.p.t.s.TCPClientImpl: Using platform default charset:UTF-8
+2019-02-18 01:26:49,760 ERROR o.a.j.p.t.s.TCPSampler: 
+org.apache.jmeter.protocol.tcp.sampler.ReadException: Error reading from server, bytes read: 60
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:131) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPSampler.sample(TCPSampler.java:402) [ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253) [ApacheJMeter_core.jar:5.0 r1840935]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[?:1.8.0_191]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:114) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	... 6 more
+2019-02-18 01:26:50,261 INFO o.a.j.p.t.s.TCPClientImpl: Using platform default charset:UTF-8
+2019-02-18 01:26:50,763 ERROR o.a.j.p.t.s.TCPSampler: 
+org.apache.jmeter.protocol.tcp.sampler.ReadException: Error reading from server, bytes read: 60
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:131) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPSampler.sample(TCPSampler.java:402) [ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253) [ApacheJMeter_core.jar:5.0 r1840935]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[?:1.8.0_191]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:114) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	... 6 more
+2019-02-18 01:26:51,265 INFO o.a.j.p.t.s.TCPClientImpl: Using platform default charset:UTF-8
+2019-02-18 01:26:51,767 ERROR o.a.j.p.t.s.TCPSampler: 
+org.apache.jmeter.protocol.tcp.sampler.ReadException: Error reading from server, bytes read: 60
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:131) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPSampler.sample(TCPSampler.java:402) [ApacheJMeter_tcp.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486) [ApacheJMeter_core.jar:5.0 r1840935]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253) [ApacheJMeter_core.jar:5.0 r1840935]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_191]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_191]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[?:1.8.0_191]
+	at org.apache.jmeter.protocol.tcp.sampler.TCPClientImpl.read(TCPClientImpl.java:114) ~[ApacheJMeter_tcp.jar:5.0 r1840935]
+	... 6 more
+2019-02-18 01:26:51,768 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:26:51,768 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:26:51,769 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:26:51,769 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:27:14,853 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:27:14,854 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:27:14,854 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:27:14,947 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:27:14,948 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:27:14,948 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:27:14,948 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:27:14,948 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:27:14,948 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:27:14,949 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:27:15,450 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:27:15,953 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:27:16,454 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:27:16,956 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:27:17,458 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:27:17,959 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'TCPClientCamixImpl'
+2019-02-18 01:27:17,960 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:27:17,960 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:27:17,960 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:27:17,960 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:27:24,446 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:27:24,447 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:27:24,447 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:27:24,535 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:27:24,535 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:27:24,535 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:27:24,536 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:27:24,536 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:27:24,536 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:27:24,537 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:27:25,038 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:27:25,540 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:27:26,043 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:27:26,545 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:27:27,046 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:27:27,547 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:27:27,548 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:27:27,548 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:27:27,548 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:27:27,549 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:30:53,620 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:30:53,621 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:30:53,622 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:30:53,713 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:30:53,714 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:30:53,714 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:30:53,714 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:30:53,714 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:30:53,714 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:30:53,714 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:30:54,216 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:30:54,718 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:30:55,219 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:30:55,720 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:30:56,221 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:30:56,723 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:30:56,724 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:30:56,724 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:30:56,725 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:30:56,726 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:32:58,774 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2019-02-18 01:32:58,774 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-02-18 01:32:58,775 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2019-02-18 01:32:58,864 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Groupe d'unités
+2019-02-18 01:32:58,864 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Groupe d'unités.
+2019-02-18 01:32:58,864 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2019-02-18 01:32:58,864 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=false
+2019-02-18 01:32:58,865 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2019-02-18 01:32:58,865 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2019-02-18 01:32:58,865 INFO o.a.j.t.JMeterThread: Thread started: Groupe d'unités 1-1
+2019-02-18 01:32:59,367 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:32:59,868 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:33:00,369 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:33:00,871 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:33:01,372 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:33:01,874 ERROR o.a.j.p.t.s.TCPSampler: Could not find protocol class 'camix.TCPClientCamixImpl'
+2019-02-18 01:33:01,875 INFO o.a.j.t.JMeterThread: Thread is done: Groupe d'unités 1-1
+2019-02-18 01:33:01,875 INFO o.a.j.t.JMeterThread: Thread finished: Groupe d'unités 1-1
+2019-02-18 01:33:01,875 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2019-02-18 01:33:01,876 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2019-02-18 01:33:22,755 INFO o.a.j.g.a.t.TemplateManager: Reading templates from: /home/bart/Documents/Imt/Qualité Logicielle/Tests/apache-jmeter-5.0/bin/templates/templates.xml

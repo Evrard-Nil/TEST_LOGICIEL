@@ -279,14 +279,14 @@ public class FelixTestCommandeQuitter {
 	}
 
 	/**
-	 * Test la connexion lorsque Camix est lancé, avec la bonnex adresse et le bon
-	 * port
+	 * Test de validation de la commande /q. On vérifie sur deux instances, une qui
+	 * quitte et une qui observe l'autre quitter
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.
 	 */
 	@Test
-	public void testConnexionAvecCamix_deuxInstances() throws InterruptedException, Exception {
+	public void testConnexionAvecCamix_commandeQuitter() throws InterruptedException, Exception {
 		// 1,5 seconde d'observation par suspension du thread
 		// entre chaque action (objectif pédagogique).
 		final Long timeout = Long.valueOf(1500);

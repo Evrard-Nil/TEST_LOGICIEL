@@ -214,7 +214,53 @@ public class FelixTestConnexionImpossible {
 	}
 
 	/**
-	 * Test la connexion lorsque Camix n'est pas lancé
+	 * Test l'initialisation des différents champs de la vue.
+	 * 
+	 * <p>
+	 * Méthodes concernées :
+	 * <ul>
+	 * <li>private void construireFenetre()
+	 * <li>private void construirePanneaux()
+	 * <li>private void construireControles(Integer, Integer)()
+	 * </ul>
+	 * </p>
+	 */
+	@Test
+	public void testInitialiseVue() {
+		/*
+		 * Données de test.
+		 */
+		final String messageInfoDefaut = Felix.CONFIGURATION.getString("FENETRE_CONNEXION_MESSAGE_DEFAUT");
+		final String adresseDefaut = Felix.CONFIGURATION.getString("ADRESSE_CHAT");
+		final String portDefaut = Felix.CONFIGURATION.getString("PORT_CHAT");
+		final String titreFenetreDefaut = Felix.CONFIGURATION.getString("FENETRE_CONNEXION_TITRE");
+		final String texteBoutonDefaut = Felix.CONFIGURATION.getString("FENETRE_CONNEXION_BOUTON_CONNECTER");
+
+		/*
+		 * Exécution du test.
+		 */
+		try {
+			// Récupération des valeurs des champs de la vue.
+			final String titreFenetreActuel = fenetreConnexion.getTitle();
+			final String messageInfoActuel = labelInfos.getText();
+			final String ipActuel = texteIP.getText();
+			final String portActuel = textePort.getText();
+			final String texteBoutonActuel = boutonConnexion.getText();
+
+			// Assertions.
+			Assert.assertEquals("Titre fenetre par défaut invalide.", titreFenetreDefaut, titreFenetreActuel);
+			Assert.assertEquals("Message d'information par défaut invalide.", messageInfoDefaut, messageInfoActuel);
+			Assert.assertEquals("Adresse par défaut invalide.", adresseDefaut, ipActuel);
+			Assert.assertEquals("Port par défaut invalide.", portDefaut, portActuel);
+			Assert.assertEquals("Texte bouton par défaut invalide.", texteBoutonDefaut, texteBoutonActuel);
+
+		} catch (Exception e) {
+			Assert.fail("Manipulation de la vue client invalide." + e.getMessage());
+		}
+	}
+
+	/**
+	 * Test de validation de la connexion lorsque Camix n'est pas lancé
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.
@@ -267,7 +313,7 @@ public class FelixTestConnexionImpossible {
 	}
 
 	/**
-	 * Teste la connexion à un service valide qui n'est pas Camix
+	 * Teste de validation de la connexion à un service valide qui n'est pas Camix
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.
@@ -318,7 +364,7 @@ public class FelixTestConnexionImpossible {
 	}
 
 	/**
-	 * Test la connexion lorsque l'IP est valide mais pas le port
+	 * Test de validation de la connexion lorsque l'IP est valide mais pas le port
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.
@@ -369,7 +415,7 @@ public class FelixTestConnexionImpossible {
 	}
 
 	/**
-	 * Test la connexion lorsque le port est valide mais pas l'IP
+	 * Test de validation de la connexion lorsque le port est valide mais pas l'IP
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.

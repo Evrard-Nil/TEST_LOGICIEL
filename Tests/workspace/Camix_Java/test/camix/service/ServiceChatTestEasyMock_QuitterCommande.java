@@ -12,6 +12,12 @@ import org.junit.runner.RunWith;
 
 import camix.communication.ProtocoleChat;
 
+/**
+ * Test unitaire de la méthode fermeConnexionCommande(ClientChat)
+ * 
+ * @author bart
+ *
+ */
 @RunWith(EasyMockRunner.class)
 public class ServiceChatTestEasyMock_QuitterCommande {
 
@@ -56,10 +62,10 @@ public class ServiceChatTestEasyMock_QuitterCommande {
 	}
 
 	/**
-	 * Teste l'exécution de la méthode informeDepartClient de ServiceChat
+	 * Teste l'exécution de la méthode fermeConnexionCommande de ServiceChat
 	 * 
 	 * <p>
-	 * Méthode concernée : public void informeDepartClient(ClientChat c)
+	 * Méthode concernée : public void fermeConnexionCommande(ClientChat c)
 	 * </p>
 	 */
 	@Test(timeout = 2000)
@@ -74,14 +80,15 @@ public class ServiceChatTestEasyMock_QuitterCommande {
 			e.printStackTrace();
 		}
 
+		// On mock le client, qui doit envoyer le message de sortie et fermer la
+		// connexion
 		EasyMock.expect(clientMock.donneId()).andReturn("123").times(1);
 		clientMock.envoieMessage(message);
 		clientMock.fermeConnexionCommande();
 
 		EasyMock.replay(this.clientMock);
 
-		// On ajoute deux fois le client pour simuler le fait d'avoir déjà le client
-		// dans notre canal
+		// On lance la commande
 		service.fermeConnexionCommande(clientMock);
 
 		EasyMock.verify(this.clientMock);

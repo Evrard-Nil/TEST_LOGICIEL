@@ -69,3 +69,5 @@
 2019-01-25 14:31:30,266 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/netbeans/jemmy/2.2.7.5/jemmy-2.2.7.5-sources.jar
 2019-01-25 14:31:31,120 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/netbeans/jemmy/2.2.7.5/jemmy-2.2.7.5-sources.jar
 2019-01-30 09:22:55,828 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-02-18 01:38:33,629 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-02-18 01:42:51,447 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

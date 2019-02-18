@@ -282,8 +282,8 @@ public class FelixTestConnexionPossible {
 	}
 
 	/**
-	 * Test la connexion lorsque Camix est lancé, avec la bonnex adresse et le bon
-	 * port
+	 * Test de validation la connexion lorsque Camix est lancé, avec l'adresse et le
+	 * port par défaut
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.
@@ -309,8 +309,8 @@ public class FelixTestConnexionPossible {
 	}
 
 	/**
-	 * Test la connexion lorsque Camix est lancé, avec la bonnex adresse et le bon
-	 * port
+	 * Test de validation la connexion lorsque Camix est lancé, avec une adresse et
+	 * un port valide
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.
@@ -360,8 +360,7 @@ public class FelixTestConnexionPossible {
 	}
 
 	/**
-	 * Test la connexion lorsque Camix est lancé, avec la bonnex adresse et le bon
-	 * port
+	 * Test de validation la connexion lorsque Camix est lancé sur deux instances.
 	 * 
 	 * @throws InterruptedException
 	 *             pour la temporisation par suspension du thread.

@@ -11,7 +11,7 @@
 	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/byte-buddy-1.9.7.jar"/>
 	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/byte-buddy-agent-1.9.7.jar"/>
 	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/cglib-nodep-3.2.10.jar"/>
-	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/easymock-4.0.2.jar" sourcepath="/home/bart/.m2/repository/org/easymock/easymock/4.0.2/easymock-4.0.2-sources.jar"/>
+	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/easymock-4.0.2.jar"/>
 	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/jemmy-2.2.7.5.jar"/>
 	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/mockito-core-2.23.4.jar"/>
 	<classpathentry kind="lib" path="/home/bart/Documents/Imt/Qualité Logicielle/git/TEST_LOGICIEL/Tests/libs/objenesis-3.0.1.jar"/>
